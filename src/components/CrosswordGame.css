@@ -1,0 +1,89 @@
+.crossword-game {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.game-area {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.grid-wrapper {
+  border: 1px solid #ccc;
+  display: inline-block; /* To wrap content tightly */
+}
+
+.grid-row {
+  display: flex;
+}
+
+.grid-cell {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #fff;
+  color: #333;
+}
+
+.grid-cell.filled {
+  background-color: #f0f0f0; /* Light grey for filled cells */
+}
+
+.grid-cell.selected {
+  background-color: #a0d2eb; /* Light blue for selected word */
+  color: #fff;
+}
+
+.clues-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 250px;
+}
+
+.clues-section h3 {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.clue-item {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.clue-item:hover {
+  background-color: #f0f0f0;
+}
+
+.clue-item.highlighted {
+  background-color: #f0e68c; /* Khaki for highlighted clue */
+  font-weight: bold;
+}
+
+.input-area {
+  margin-top: 20px;
+}
+
+.input-area input {
+  padding: 10px;
+  font-size: 1.1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+  text-align: center;
+  text-transform: uppercase;
+}
