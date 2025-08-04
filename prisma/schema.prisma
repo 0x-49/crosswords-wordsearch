@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+model User {
+  id         String   @id @db.Uuid
+  email      String   @unique
+  createdAt  DateTime @default(now())
+  wordSearches WordSearch[]
+  puzzleBooks PuzzleBook[]
+  crosswords  Crossword[]
+}
+
+model WordSearch {
+  id          String   @id @default(cuid())
+  title       String
+  theme       String
+  difficulty  String   // Easy, Medium, Hard
+  gridSize    Int      @default(15)
+  words       String[] // Array of words to find
+  grid        String   // JSON string of the grid
+  solution    String   // JSON string showing word positions
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String   @db.Uuid
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  puzzleBooks PuzzleBookWordSearch[]
+}
+
+model PuzzleBook {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  theme       String
+  difficulty  String
+  bookType    BookType @default(MIXED)
+  totalPuzzles Int     @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String   @db.Uuid
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  wordSearches PuzzleBookWordSearch[]
+  crosswords  PuzzleBookCrossword[]
+}
+
+model PuzzleBookWordSearch {
+  id           String     @id @default(cuid())
+  puzzleBookId String
+  wordSearchId String
+  order        Int        @default(0)
+  puzzleBook   PuzzleBook @relation(fields: [puzzleBookId], references: [id], onDelete: Cascade)
+  wordSearch   WordSearch @relation(fields: [wordSearchId], references: [id], onDelete: Cascade)
+  
+  @@unique([puzzleBookId, wordSearchId])
+}
+
+model WordBank {
+  id       String   @id @default(cuid())
+  category String
+  words    String[] // Array of words in this category
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Crossword {
+  id          String   @id @default(cuid())
+  title       String
+  theme       String
+  difficulty  String
+  gridSize    Int      @default(15)
+  grid        Json     // JSON object of the grid
+  clues       Json     // JSON object of the clues { across: {}, down: {} }
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String   @db.Uuid
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  puzzleBooks PuzzleBookCrossword[]
+}
+
+model PuzzleBookCrossword {
+  id           String     @id @default(cuid())
+  puzzleBookId String
+  crosswordId  String
+  order        Int        @default(0)
+  puzzleBook   PuzzleBook @relation(fields: [puzzleBookId], references: [id], onDelete: Cascade)
+  crossword    Crossword  @relation(fields: [crosswordId], references: [id], onDelete: Cascade)
+
+  @@unique([puzzleBookId, crosswordId])
+}
+
+enum BookType {
+  WORD_SEARCH
+  CROSSWORD
+  MIXED
+}
