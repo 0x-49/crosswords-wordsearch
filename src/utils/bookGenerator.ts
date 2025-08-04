@@ -12,10 +12,13 @@ export interface PuzzleTemplate {
   data: WordSearchResult | CrosswordResult;
 }
 
+export type BookType = 'WORD_SEARCH' | 'CROSSWORD' | 'MIXED';
+
 export interface PuzzleBook {
   id: string;
   title: string;
   theme: string;
+  bookType: BookType;
   pages: PuzzleTemplate[];
   totalPages: number;
 }
@@ -103,28 +106,39 @@ export class BookGenerator {
     };
   }
 
-  private generateBookForTheme(theme: string, bookId: string, largePrint: boolean = false): PuzzleBook {
+  private generateBookForTheme(theme: string, bookId: string, bookType: BookType = 'MIXED', largePrint: boolean = false): PuzzleBook {
     const pages: PuzzleTemplate[] = [];
     let templateCounter = 1;
 
-    // Generate 75 word search templates (mix of difficulties)
-    for (let i = 0; i < 75; i++) {
-      const difficulty = DIFFICULTIES[i % 3]; // Cycle through difficulties
-      const templateId = `${bookId}_ws_${templateCounter++}`;
-      pages.push(this.generateWordSearchTemplate(theme, difficulty, templateId, largePrint));
+    if (bookType === 'WORD_SEARCH' || bookType === 'MIXED') {
+      const wordSearchCount = bookType === 'MIXED' ? 75 : 150;
+      for (let i = 0; i < wordSearchCount; i++) {
+        const difficulty = DIFFICULTIES[i % 3];
+        const templateId = `${bookId}_ws_${templateCounter++}`;
+        pages.push(this.generateWordSearchTemplate(theme, difficulty, templateId, largePrint));
+      }
     }
 
-    // Generate 75 crossword templates (mix of difficulties)
-    for (let i = 0; i < 75; i++) {
-      const difficulty = DIFFICULTIES[i % 3]; // Cycle through difficulties
-      const templateId = `${bookId}_cw_${templateCounter++}`;
-      pages.push(this.generateCrosswordTemplate(theme, difficulty, templateId, largePrint));
+    if (bookType === 'CROSSWORD' || bookType === 'MIXED') {
+      const crosswordCount = bookType === 'MIXED' ? 75 : 150;
+      for (let i = 0; i < crosswordCount; i++) {
+        const difficulty = DIFFICULTIES[i % 3];
+        const templateId = `${bookId}_cw_${templateCounter++}`;
+        pages.push(this.generateCrosswordTemplate(theme, difficulty, templateId, largePrint));
+      }
     }
+
+    const bookTitle = bookType === 'MIXED' 
+      ? `${theme} Puzzle Book` 
+      : bookType === 'WORD_SEARCH' 
+      ? `${theme} Word Search Book` 
+      : `${theme} Crossword Book`;
 
     return {
       id: bookId,
-      title: `${theme} Puzzle Book${largePrint ? ' (Large Print)' : ''}`,
+      title: `${bookTitle}${largePrint ? ' (Large Print)' : ''}`,
       theme,
+      bookType,
       pages,
       totalPages: 150
     };
@@ -147,7 +161,7 @@ export class BookGenerator {
     };
   }
 
-  public generateBookByTheme(theme: string, largePrint: boolean = false): PuzzleBook | null {
+  public generateBookByTheme(theme: string, bookType: BookType = 'MIXED', largePrint: boolean = false): PuzzleBook | null {
     const themes = getAllThemeNamesComplete();
     if (!themes.includes(theme)) {
       console.error('Theme not found in complete collection:', theme);
@@ -156,7 +170,7 @@ export class BookGenerator {
     }
 
     const bookId = `book_${theme.toLowerCase().replace(/\s+/g, '_')}${largePrint ? '_large_print' : ''}`;
-    return this.generateBookForTheme(theme, bookId, largePrint);
+    return this.generateBookForTheme(theme, bookId, bookType, largePrint);
   }
 
   public generateAllBooksWithLargePrint(): BookCollection {

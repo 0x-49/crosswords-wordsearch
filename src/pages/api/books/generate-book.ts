@@ -15,16 +15,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(401).json({ error: 'Unauthorized' });
     }
 
-    const { theme } = req.body;
+    const { theme, bookType } = req.body;
 
     if (!theme) {
       return res.status(400).json({ error: 'Theme is required' });
     }
 
+    if (bookType && !['WORD_SEARCH', 'CROSSWORD', 'MIXED'].includes(bookType)) {
+      return res.status(400).json({ error: 'Invalid bookType specified' });
+    }
+
     console.log('Generating book for theme:', theme);
 
     const generator = new BookGenerator();
-    const book = generator.generateBookByTheme(theme);
+    const book = generator.generateBookByTheme(theme, bookType);
 
     if (!book) {
       console.error('Theme not found:', theme);

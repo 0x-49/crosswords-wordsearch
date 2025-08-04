@@ -4,6 +4,8 @@ import ProtectedRoute from '@/components/ProtectedRoute';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { toast } from 'sonner';
@@ -54,6 +56,7 @@ export default function BookGenerator() {
   const [generating, setGenerating] = useState(false);
   const [generatingAll, setGeneratingAll] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState<string>('');
+  const [bookType, setBookType] = useState<'WORD_SEARCH' | 'CROSSWORD' | 'MIXED'>('MIXED');
   const [generatedBook, setGeneratedBook] = useState<BookGenerationResult | null>(null);
   const [collectionSummary, setCollectionSummary] = useState<CollectionSummary | null>(null);
 
@@ -78,7 +81,7 @@ export default function BookGenerator() {
     }
   };
 
-  const generateBook = async (theme: string) => {
+  const generateBook = async (theme: string, type: typeof bookType) => {
     setGenerating(true);
     try {
       const response = await fetch('/api/books/generate-book', {
@@ -86,7 +89,7 @@ export default function BookGenerator() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ theme }),
+        body: JSON.stringify({ theme, bookType: type }),
       });
 
       if (response.ok) {
@@ -232,9 +235,27 @@ export default function BookGenerator() {
                     </div>
                   )}
                   
+                  <div className="mb-4">
+                    <Label className="font-semibold mb-2 block">Book Type</Label>
+                    <RadioGroup defaultValue="MIXED" onValueChange={(value) => setBookType(value as typeof bookType)} className="flex space-x-4">
+                      <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="MIXED" id="r-mixed" />
+                        <Label htmlFor="r-mixed">Mixed</Label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="WORD_SEARCH" id="r-ws" />
+                        <Label htmlFor="r-ws">Word Search</Label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="CROSSWORD" id="r-cw" />
+                        <Label htmlFor="r-cw">Crossword</Label>
+                      </div>
+                    </RadioGroup>
+                  </div>
+
                   <div className="flex gap-4">
                     <Button
-                      onClick={() => selectedTheme && generateBook(selectedTheme)}
+                      onClick={() => selectedTheme && generateBook(selectedTheme, bookType)}
                       disabled={!selectedTheme || generating}
                       className="flex items-center gap-2"
                     >
@@ -388,7 +409,7 @@ export default function BookGenerator() {
                               <div>Crosswords: {book.crosswordCount}</div>
                             </div>
                             <Button
-                              onClick={() => generateBook(book.theme)}
+                              onClick={() => generateBook(book.theme, 'MIXED')}
                               disabled={generating}
                               size="sm"
                               className="mt-3 w-full"
