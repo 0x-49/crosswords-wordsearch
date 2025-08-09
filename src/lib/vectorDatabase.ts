@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-// import OpenAI from 'openai'; // Temporarily commented for initial implementation
+import OpenAI from 'openai';
 
 const prisma = new PrismaClient();
 const openai = new OpenAI({
@@ -114,20 +114,18 @@ export class VectorDatabase {
    * Generate embedding using OpenAI
    */
   private async generateEmbedding(text: string): Promise<number[]> {
-    if (!text.trim()) {
-      return new Array(1536).fill(0); // Return zero vector for empty text
-    }
-
     try {
       const response = await openai.embeddings.create({
         model: 'text-embedding-3-small',
-        input: text.substring(0, 8000), // Limit text length
+        input: text.substring(0, 8000), // Limit input length
+        dimensions: 1536
       });
       
       return response.data[0].embedding;
     } catch (error) {
       console.error('Error generating embedding:', error);
-      return new Array(1536).fill(0); // Return zero vector on error
+      // Fallback to zero vector if API fails
+      return new Array(1536).fill(0);
     }
   }
 
@@ -138,7 +136,7 @@ export class VectorDatabase {
     try {
       // Use upsert to handle duplicates
       for (const embedding of embeddings) {
-        await prisma.puzzleEmbedding.upsert({
+        const result = await prisma.puzzleEmbeddings.upsert({
           where: { puzzleId: embedding.puzzleId },
           update: {
             puzzleType: embedding.puzzleType,
@@ -190,7 +188,7 @@ export class VectorDatabase {
       
       // Get all embeddings from database
       const whereClause = type !== 'all' ? { puzzleType: type } : {};
-      const embeddings = await prisma.puzzleEmbedding.findMany({
+      const existingEmbedding = await prisma.puzzleEmbeddings.findUnique({
         where: whereClause,
         take: 1000 // Limit for performance
       });
@@ -198,23 +196,23 @@ export class VectorDatabase {
       // Calculate similarities
       const results: SemanticSearchResult[] = [];
       
-      for (const embedding of embeddings) {
+      if (existingEmbedding) {
         // Calculate similarity with combined embedding
-        const similarity = this.cosineSimilarity(queryEmbedding, embedding.combinedEmbedding as number[]);
+        const similarity = this.cosineSimilarity(queryEmbedding, existingEmbedding.combinedEmbedding as number[]);
         
         if (similarity >= threshold) {
           // Determine match reasons
-          const matchReasons = await this.getMatchReasons(query, embedding, queryEmbedding);
+          const matchReasons = await this.getMatchReasons(query, existingEmbedding, queryEmbedding);
           
           // Get full puzzle data
-          const puzzle = await this.getPuzzleData(embedding.puzzleId, embedding.puzzleType);
+          const puzzle = await this.getPuzzleData(existingEmbedding.puzzleId, existingEmbedding.puzzleType);
           
           if (puzzle) {
             results.push({
               puzzle,
               similarity,
               matchReasons,
-              relatedPuzzles: includeRelated ? await this.getRelatedPuzzles(embedding.puzzleId) : undefined
+              relatedPuzzles: includeRelated ? await this.getRelatedPuzzles(existingEmbedding.puzzleId) : undefined
             });
           }
         }
@@ -235,21 +233,10 @@ export class VectorDatabase {
    * Calculate cosine similarity between two vectors
    */
   private cosineSimilarity(a: number[], b: number[]): number {
-    if (a.length !== b.length) return 0;
-    
-    let dotProduct = 0;
-    let normA = 0;
-    let normB = 0;
-    
-    for (let i = 0; i < a.length; i++) {
-      dotProduct += a[i] * b[i];
-      normA += a[i] * a[i];
-      normB += b[i] * b[i];
-    }
-    
-    if (normA === 0 || normB === 0) return 0;
-    
-    return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
+    const dotProduct = a.reduce((sum, val, i) => sum + val * b[i], 0);
+    const magnitudeA = Math.sqrt(a.reduce((sum, val) => sum + val * val, 0));
+    const magnitudeB = Math.sqrt(b.reduce((sum, val) => sum + val * val, 0));
+    return dotProduct / (magnitudeA * magnitudeB);
   }
 
   /**

@@ -10,25 +10,77 @@ interface SearchResult {
   type: 'wordsearch' | 'crossword';
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+interface SearchResponse {
+  results: SearchResult[];
+  suggestions: any[];
+  metadata: {
+    totalResults: number;
+    searchTime: number;
+    searchMethod: 'vector' | 'enhanced_keyword';
+    queryTerms?: string[];
+    vectorAvailable: boolean;
+  };
+}
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<SearchResponse | { error: string }>
+) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  const startTime = Date.now();
+
   try {
-    const { 
-      query, 
-      type = 'all', 
-      theme, 
-      difficulty, 
-      limit = 20 
+    const {
+      query,
+      type = 'all',
+      theme,
+      difficulty,
+      limit = 20,
+      useVector = true
     } = req.body;
 
     if (!query || typeof query !== 'string') {
-      return res.status(400).json({ message: 'Query is required' });
+      return res.status(400).json({ error: 'Query is required' });
     }
 
-    // Get puzzles based on type filter
+    console.log(`🔍 Smart search for: "${query}" (type: ${type}, vector: ${useVector})`);
+
+    // Try vector search first if enabled and available
+    if (useVector && process.env.OPENAI_API_KEY) {
+      try {
+        console.log('🧠 Attempting vector search...');
+        
+        const vectorResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/search/vector`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query, type, theme, difficulty, limit })
+        });
+        
+        if (vectorResponse.ok) {
+          const vectorData = await vectorResponse.json();
+          console.log(`✅ Vector search successful: ${vectorData.results.length} results`);
+          
+          return res.status(200).json({
+            ...vectorData,
+            metadata: {
+              ...vectorData.metadata,
+              searchMethod: 'vector',
+              totalTime: Date.now() - startTime
+            }
+          });
+        } else {
+          console.log('⚠️ Vector search failed, falling back to enhanced search');
+        }
+      } catch (vectorError) {
+        console.log('⚠️ Vector search error, falling back to enhanced search:', vectorError.message);
+      }
+    }
+
+    // Fallback to enhanced keyword search
+    console.log('🔍 Using enhanced keyword search...');
     const [wordSearches, crosswords] = await Promise.all([
       type === 'crossword' ? [] : getWordSearches({ theme, difficulty }),
       type === 'wordsearch' ? [] : getCrosswords({ theme, difficulty })
@@ -46,13 +98,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const suggestions = generateSuggestions(query, allPuzzles);
 
     res.status(200).json({
-      query,
       results,
       suggestions,
-      total: results.length,
-      searchTime: Date.now()
+      metadata: {
+        totalResults: results.length,
+        searchTime: Date.now() - startTime,
+        searchMethod: 'enhanced_keyword',
+        queryTerms: suggestions.queryTerms,
+        vectorAvailable: !!process.env.OPENAI_API_KEY
+      }
     });
-
   } catch (error) {
     console.error('Smart search error:', error);
     res.status(500).json({ 

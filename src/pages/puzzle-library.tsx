@@ -41,8 +41,14 @@ import {
   Calendar,
   Hash,
   Tag,
-  Users
+  Users,
+  Award,
+  BarChart3,
+  Lightbulb
 } from 'lucide-react';
+
+import { getBenefitTagsForTheme, BENEFIT_TAGS, getBenefitTags, getAllBenefitTags, filterPuzzlesByBenefits, calculateCognitiveScore, getPersonalizedBenefitRecommendations, BenefitTag } from '@/lib/benefitTags';
+import CognitiveTracker from '@/components/CognitiveTracker';
 
 interface PuzzleItem {
   id: string;
@@ -91,13 +97,14 @@ export default function PuzzleLibrary() {
   const [loading, setLoading] = useState(true);
   const [selectedPuzzle, setSelectedPuzzle] = useState<any>(null);
   const [puzzleViewOpen, setPuzzleViewOpen] = useState(false);
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
+  const [showCognitiveTracker, setShowCognitiveTracker] = useState(false);
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
   const [stats, setStats] = useState({
     total: 0,
-    wordsearch: 0,
-    crossword: 0,
-    themes: 0,
-    favorites: 0
+    favorites: 0,
+    wordSearch: 0,
+    crossword: 0
   });
 
   const [filters, setFilters] = useState<FilterState>({
@@ -181,9 +188,8 @@ export default function PuzzleLibrary() {
       // Calculate stats
       setStats({
         total: allPuzzles.length,
-        wordsearch: allPuzzles.filter(p => p.type === 'wordsearch').length,
+        wordSearch: allPuzzles.filter(p => p.type === 'wordsearch').length,
         crossword: allPuzzles.filter(p => p.type === 'crossword').length,
-        themes: uniqueThemes.length,
         favorites: 0 // TODO: Load from user preferences
       });
 
@@ -284,6 +290,11 @@ export default function PuzzleLibrary() {
     // Theme filter
     if (filters.theme) {
       filtered = filtered.filter(puzzle => puzzle.theme === filters.theme);
+    }
+
+    // Favorites filter
+    if (showFavoritesOnly) {
+      filtered = filtered.filter(puzzle => puzzle.isFavorite);
     }
 
     // Sort
@@ -448,7 +459,7 @@ export default function PuzzleLibrary() {
               <Card className="text-center">
                 <CardContent className="pt-6">
                   <Grid3X3 className="h-8 w-8 text-green-600 mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-gray-900">{stats.wordsearch.toLocaleString()}</div>
+                  <div className="text-2xl font-bold text-gray-900">{stats.wordSearch.toLocaleString()}</div>
                   <div className="text-sm text-gray-600">Word Searches</div>
                 </CardContent>
               </Card>
@@ -467,23 +478,20 @@ export default function PuzzleLibrary() {
             <motion.div variants={fadeInUp}>
               <Card className="text-center">
                 <CardContent className="pt-6">
-                  <Tag className="h-8 w-8 text-purple-600 mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-gray-900">{stats.themes}</div>
-                  <div className="text-sm text-gray-600">Themes</div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div variants={fadeInUp}>
-              <Card className="text-center">
-                <CardContent className="pt-6">
                   <Heart className="h-8 w-8 text-red-600 mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-gray-900">{favorites.size}</div>
+                  <div className="text-2xl font-bold text-gray-900">{stats.favorites}</div>
                   <div className="text-sm text-gray-600">Favorites</div>
                 </CardContent>
               </Card>
             </motion.div>
           </motion.div>
+
+          {/* Cognitive Tracker */}
+          {showCognitiveTracker && (
+            <div className="mb-8">
+              <CognitiveTracker userId={currentUserId} />
+            </div>
+          )}
 
           {/* Search and Filters */}
           <motion.div 

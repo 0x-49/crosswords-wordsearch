@@ -1,13 +1,16 @@
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
   binaryTargets = ["native", "rhel-openssl-3.0.x"]
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  extensions = [vector]
   directUrl = env("DIRECT_URL")
 }
+
 model User {
   id         String   @id @db.Uuid
   email      String   @unique
@@ -104,18 +107,14 @@ enum BookType {
 
 // Vector embeddings for semantic search
 model PuzzleEmbedding {
-  id                String   @id @default(cuid())
-  puzzleId          String   @unique
-  puzzleType        String   // 'wordsearch' or 'crossword'
-  titleEmbedding    Json     // Vector embedding for title
-  contentEmbedding  Json     // Vector embedding for content (words/clues)
-  themeEmbedding    Json     // Vector embedding for theme
-  wordsEmbedding    Json     // Vector embedding for words
-  hintsEmbedding    Json?    // Vector embedding for hints (crosswords only)
-  combinedEmbedding Json     // Combined vector embedding
-  metadata          Json     // Puzzle metadata for quick access
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
+  id        String   @id @default(cuid())
+  puzzleId  String
+  puzzleType String  // 'word_search' or 'crossword'
+  embedding Unsupported("vector(1536)")  // OpenAI ada-002 embedding dimension
+  content   String   // The text that was embedded
+  metadata  Json?    // Additional metadata (theme, difficulty, etc.)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@index([puzzleType])
 }
