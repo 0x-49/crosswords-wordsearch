@@ -15,6 +15,8 @@ model User {
   wordSearches WordSearch[]
   puzzleBooks PuzzleBook[]
   crosswords  Crossword[]
+  interactions UserPuzzleInteraction[]
+  favorites   UserFavorite[]
 }
 
 model WordSearch {
@@ -98,4 +100,70 @@ enum BookType {
   WORD_SEARCH
   CROSSWORD
   MIXED
+}
+
+// Vector embeddings for semantic search
+model PuzzleEmbedding {
+  id                String   @id @default(cuid())
+  puzzleId          String   @unique
+  puzzleType        String   // 'wordsearch' or 'crossword'
+  titleEmbedding    Json     // Vector embedding for title
+  contentEmbedding  Json     // Vector embedding for content (words/clues)
+  themeEmbedding    Json     // Vector embedding for theme
+  wordsEmbedding    Json     // Vector embedding for words
+  hintsEmbedding    Json?    // Vector embedding for hints (crosswords only)
+  combinedEmbedding Json     // Combined vector embedding
+  metadata          Json     // Puzzle metadata for quick access
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([puzzleType])
+}
+
+// Graph relationships between puzzles
+model PuzzleRelationship {
+  id               String   @id @default(cuid())
+  sourcePuzzleId   String
+  targetPuzzleId   String
+  relationshipType String   // 'similar_theme', 'shared_words', 'difficulty_progression', etc.
+  strength         Float    // 0.0 to 1.0
+  metadata         Json?    // Additional relationship data
+  createdAt        DateTime @default(now())
+
+  @@unique([sourcePuzzleId, targetPuzzleId, relationshipType])
+  @@index([sourcePuzzleId])
+  @@index([targetPuzzleId])
+  @@index([relationshipType])
+}
+
+// User interactions and preferences
+model UserPuzzleInteraction {
+  id              String   @id @default(cuid())
+  userId          String
+  puzzleId        String
+  puzzleType      String
+  interactionType String   // 'viewed', 'played', 'completed', 'favorited', 'shared'
+  durationSeconds Int?
+  metadata        Json?    // Additional interaction data
+  createdAt       DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([puzzleId])
+  @@index([interactionType])
+}
+
+// User favorites
+model UserFavorite {
+  id         String   @id @default(cuid())
+  userId     String
+  puzzleId   String
+  puzzleType String
+  createdAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, puzzleId])
+  @@index([userId])
 }

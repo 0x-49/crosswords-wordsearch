@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { GetServerSideProps } from 'next';
+import Head from 'next/head';
 import { useAuth } from '@/contexts/AuthContext';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import Layout from '@/components/Layout';
@@ -14,6 +16,7 @@ import CrosswordDisplay from '@/components/CrosswordDisplay';
 import WordSearchDisplay from '@/components/WordSearchDisplay';
 import InteractiveCrossword from '@/components/InteractiveCrossword';
 import InteractiveWordSearch from '@/components/InteractiveWordSearch';
+import { PrismaClient } from '@prisma/client';
 import { 
   ArrowLeft, 
   Eye, 
@@ -23,7 +26,10 @@ import {
   Lightbulb,
   Timer,
   Trophy,
-  Share2
+  Share2,
+  Calendar,
+  User,
+  Tag
 } from 'lucide-react';
 
 interface PuzzleData {
@@ -32,9 +38,18 @@ interface PuzzleData {
   title: string;
   theme: string;
   difficulty: 'Easy' | 'Medium' | 'Hard';
-  data: any;
+  gridSize: number;
+  words?: string[];
+  grid: any;
+  solution?: any;
+  clues?: any;
+  createdAt: string;
+  updatedAt: string;
   estimatedTime: string;
   description: string;
+  seoTitle: string;
+  seoDescription: string;
+  keywords: string[];
 }
 
 const fadeInUp = {
@@ -43,13 +58,18 @@ const fadeInUp = {
   transition: { duration: 0.3 }
 };
 
-export default function PuzzlePage() {
+interface PuzzlePageProps {
+  puzzle: PuzzleData | null;
+  error?: string;
+}
+
+export default function PuzzlePage({ puzzle: initialPuzzle, error }: PuzzlePageProps) {
   const router = useRouter();
   const { user } = useAuth();
   const { type, id } = router.query;
   
-  const [puzzle, setPuzzle] = useState<PuzzleData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [puzzle, setPuzzle] = useState<PuzzleData | null>(initialPuzzle);
+  const [loading, setLoading] = useState(!initialPuzzle);
   const [gameMode, setGameMode] = useState(false);
   const [showSolution, setShowSolution] = useState(false);
   const [startTime, setStartTime] = useState<Date | null>(null);
@@ -57,101 +77,44 @@ export default function PuzzlePage() {
   const [isCompleted, setIsCompleted] = useState(false);
 
   useEffect(() => {
-    if (type && id) {
-      loadPuzzle();
+    if (error) {
+      toast.error(error);
     }
-  }, [type, id]);
+  }, [error]);
 
-  const loadPuzzle = async () => {
-    setLoading(true);
-    try {
-      // Parse the puzzle ID to extract theme and puzzle number
-      const puzzleId = id as string;
-      const parts = puzzleId.split('_');
-      
-      if (parts.length < 3) {
-        toast.error('Invalid puzzle ID');
-        return;
-      }
+  // If puzzle failed to load on server side, show error
+  if (error) {
+    return (
+      <Layout>
+        <div className="container mx-auto px-4 py-8">
+          <Card>
+            <CardContent className="p-8 text-center">
+              <h1 className="text-2xl font-bold text-red-600 mb-4">Puzzle Not Found</h1>
+              <p className="text-muted-foreground mb-6">{error}</p>
+              <Button onClick={() => router.push('/dashboard')}>
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Dashboard
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </Layout>
+    );
+  }
 
-      const theme = parts.slice(0, -2).join(' '); // Everything except last 2 parts
-      const puzzleType = parts[parts.length - 2]; // 'ws' or 'cw'
-      const puzzleNumber = parseInt(parts[parts.length - 1]); // puzzle number
-
-      // Generate the puzzle based on theme and type
-      const { getExpandedThemeDataComplete } = await import('@/utils/elderlyFriendlyThemes');
-      const { generateWordSearchNames, generateCrosswordNames } = await import('@/utils/puzzleNameGenerator');
-      
-      const themeData = getExpandedThemeDataComplete(theme);
-      if (!themeData) {
-        toast.error('Theme not found');
-        return;
-      }
-
-      let puzzleData: PuzzleData;
-      const difficulties = ['Easy', 'Medium', 'Hard'];
-      const difficulty = difficulties[(puzzleNumber - 1) % 3] as 'Easy' | 'Medium' | 'Hard';
-
-      if (type === 'wordsearch') {
-        const { WordSearchGenerator } = await import('@/utils/wordSearchGenerator');
-        const wordSearchNames = generateWordSearchNames(theme);
-        const wordCount = difficulty === 'Easy' ? 10 : difficulty === 'Medium' ? 15 : 20;
-        
-        const shuffled = [...themeData.words].sort(() => Math.random() - 0.5);
-        const words = shuffled.slice(0, wordCount);
-        
-        const generator = new WordSearchGenerator(15);
-        const wordSearch = generator.generateWordSearch({
-          gridSize: 15,
-          words,
-          difficulty
-        });
-
-        puzzleData = {
-          id: puzzleId,
-          type: 'wordsearch',
-          title: wordSearchNames[puzzleNumber - 1] || `${theme} Word Search ${puzzleNumber}`,
-          theme,
-          difficulty,
-          data: wordSearch,
-          estimatedTime: difficulty === 'Easy' ? '5-10 min' : difficulty === 'Medium' ? '10-15 min' : '15-25 min',
-          description: `Find all the hidden words in this ${difficulty.toLowerCase()} ${theme.toLowerCase()} themed word search puzzle.`
-        };
-      } else {
-        const { CrosswordGenerator } = await import('@/utils/crosswordGenerator');
-        const crosswordNames = generateCrosswordNames(theme);
-        const clueCount = difficulty === 'Easy' ? 8 : difficulty === 'Medium' ? 12 : 15;
-        
-        const shuffled = [...themeData.crosswordData].sort(() => Math.random() - 0.5);
-        const clues = shuffled.slice(0, clueCount);
-        
-        const generator = new CrosswordGenerator(15);
-        const crossword = generator.generateCrossword({
-          size: 15,
-          words: clues,
-          difficulty
-        });
-
-        puzzleData = {
-          id: puzzleId,
-          type: 'crossword',
-          title: crosswordNames[puzzleNumber - 1] || `${theme} Crossword ${puzzleNumber}`,
-          theme,
-          difficulty,
-          data: crossword,
-          estimatedTime: difficulty === 'Easy' ? '8-12 min' : difficulty === 'Medium' ? '12-18 min' : '18-30 min',
-          description: `Solve this ${difficulty.toLowerCase()} ${theme.toLowerCase()} themed crossword puzzle using the provided clues.`
-        };
-      }
-
-      setPuzzle(puzzleData);
-    } catch (error) {
-      console.error('Error loading puzzle:', error);
-      toast.error('Failed to load puzzle');
-    } finally {
-      setLoading(false);
-    }
-  };
+  if (!puzzle) {
+    return (
+      <Layout>
+        <div className="container mx-auto px-4 py-8">
+          <Card>
+            <CardContent className="p-8 text-center">
+              <h1 className="text-2xl font-bold mb-4">Loading Puzzle...</h1>
+            </CardContent>
+          </Card>
+        </div>
+      </Layout>
+    );
+  }
 
   const handleGameModeToggle = (enabled: boolean) => {
     setGameMode(enabled);
@@ -210,51 +173,22 @@ export default function PuzzlePage() {
     }
   };
 
-  if (loading) {
-    return (
-      <Layout
-        title="Loading Puzzle..."
-        description="Loading puzzle content"
-      >
-        <ProtectedRoute>
-          <div className="min-h-screen bg-background flex items-center justify-center">
-            <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-              <p className="text-muted-foreground">Loading puzzle...</p>
-            </div>
-          </div>
-        </ProtectedRoute>
-      </Layout>
-    );
-  }
-
-  if (!puzzle) {
-    return (
-      <Layout
-        title="Puzzle Not Found"
-        description="The requested puzzle could not be found"
-      >
-        <ProtectedRoute>
-          <div className="min-h-screen bg-background flex items-center justify-center">
-            <div className="text-center">
-              <h1 className="text-2xl font-bold mb-4">Puzzle Not Found</h1>
-              <p className="text-muted-foreground mb-6">The requested puzzle could not be loaded.</p>
-              <Button onClick={() => router.back()}>
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Go Back
-              </Button>
-            </div>
-          </div>
-        </ProtectedRoute>
-      </Layout>
-    );
-  }
-
   return (
-    <Layout
-      title={puzzle.title}
-      description={puzzle.description}
-    >
+    <Layout>
+      <Head>
+        <title>{puzzle.seoTitle}</title>
+        <meta name="description" content={puzzle.seoDescription} />
+        <meta name="keywords" content={puzzle.keywords.join(', ')} />
+        <meta property="og:title" content={puzzle.seoTitle} />
+        <meta property="og:description" content={puzzle.seoDescription} />
+        <meta property="og:type" content="article" />
+        <meta property="article:section" content={puzzle.type === 'wordsearch' ? 'Word Search Puzzles' : 'Crossword Puzzles'} />
+        <meta property="article:tag" content={puzzle.theme} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={puzzle.seoTitle} />
+        <meta name="twitter:description" content={puzzle.seoDescription} />
+        <link rel="canonical" href={`https://crossword-wordsearch.com/puzzle/${puzzle.type}/${puzzle.id}`} />
+      </Head>
       <ProtectedRoute>
         <div className="min-h-screen bg-background">
           {/* Header */}
@@ -440,16 +374,23 @@ export default function PuzzlePage() {
                     {puzzle.type === 'wordsearch' ? (
                       gameMode ? (
                         <InteractiveWordSearch
-                          wordSearch={puzzle.data}
+                          wordSearch={{
+                            grid: JSON.parse(puzzle.grid),
+                            words: puzzle.words || [],
+                            placements: puzzle.solution ? JSON.parse(puzzle.solution) : {}
+                          }}
                           title={puzzle.title}
                           theme={puzzle.theme}
                           difficulty={puzzle.difficulty}
-                          showSolution={showSolution}
                           onComplete={handlePuzzleComplete}
                         />
                       ) : (
                         <WordSearchDisplay
-                          wordSearch={puzzle.data}
+                          wordSearch={{
+                            grid: JSON.parse(puzzle.grid),
+                            words: puzzle.words || [],
+                            placements: puzzle.solution ? JSON.parse(puzzle.solution) : {}
+                          }}
                           title={puzzle.title}
                           theme={puzzle.theme}
                           difficulty={puzzle.difficulty}
@@ -459,16 +400,23 @@ export default function PuzzlePage() {
                     ) : (
                       gameMode ? (
                         <InteractiveCrossword
-                          crossword={puzzle.data}
+                          crossword={{
+                            grid: puzzle.grid,
+                            clues: puzzle.clues || { across: {}, down: {} },
+                            size: puzzle.gridSize
+                          }}
                           title={puzzle.title}
                           theme={puzzle.theme}
                           difficulty={puzzle.difficulty}
-                          showSolution={showSolution}
                           onComplete={handlePuzzleComplete}
                         />
                       ) : (
                         <CrosswordDisplay
-                          crossword={puzzle.data}
+                          crossword={{
+                            grid: puzzle.grid,
+                            clues: puzzle.clues || { across: {}, down: {} },
+                            size: puzzle.gridSize
+                          }}
                           title={puzzle.title}
                           theme={puzzle.theme}
                           difficulty={puzzle.difficulty}
@@ -486,3 +434,162 @@ export default function PuzzlePage() {
     </Layout>
   );
 }
+
+// Generate SEO-friendly slug from title
+function generateSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .trim();
+}
+
+// Extract puzzle ID from SEO-friendly URL
+function extractPuzzleId(id: string): string {
+  // Handle both old format (puz_ws_00001) and new format (animals-in-the-zoo-puz_ws_00001)
+  const parts = id.split('-');
+  const lastPart = parts[parts.length - 1];
+  
+  // If it's already in the correct format, return it
+  if (lastPart.startsWith('puz_')) {
+    return lastPart;
+  }
+  
+  // Otherwise, assume it's the old format
+  return id;
+}
+
+export const getServerSideProps: GetServerSideProps<PuzzlePageProps> = async (context) => {
+  const { type, id } = context.params!;
+  
+  if (!type || !id || typeof type !== 'string' || typeof id !== 'string') {
+    return {
+      notFound: true,
+    };
+  }
+
+  // Validate puzzle type
+  if (type !== 'wordsearch' && type !== 'crossword') {
+    return {
+      notFound: true,
+    };
+  }
+
+  try {
+    const prisma = new PrismaClient();
+    const puzzleId = extractPuzzleId(id);
+    
+    let puzzle: any = null;
+    
+    if (type === 'wordsearch') {
+      puzzle = await prisma.wordSearch.findUnique({
+        where: { id: puzzleId },
+        select: {
+          id: true,
+          title: true,
+          theme: true,
+          difficulty: true,
+          gridSize: true,
+          words: true,
+          grid: true,
+          solution: true,
+          createdAt: true,
+          updatedAt: true,
+        },
+      });
+    } else {
+      puzzle = await prisma.crossword.findUnique({
+        where: { id: puzzleId },
+        select: {
+          id: true,
+          title: true,
+          theme: true,
+          difficulty: true,
+          gridSize: true,
+          grid: true,
+          clues: true,
+          createdAt: true,
+          updatedAt: true,
+        },
+      });
+    }
+
+    await prisma.$disconnect();
+
+    if (!puzzle) {
+      return {
+        notFound: true,
+      };
+    }
+
+    // Generate estimated time based on difficulty and type
+    const getEstimatedTime = (difficulty: string, puzzleType: string) => {
+      if (puzzleType === 'wordsearch') {
+        return difficulty === 'Easy' ? '5-10 min' : difficulty === 'Medium' ? '10-15 min' : '15-25 min';
+      } else {
+        return difficulty === 'Easy' ? '8-15 min' : difficulty === 'Medium' ? '15-25 min' : '25-40 min';
+      }
+    };
+
+    // Generate SEO metadata
+    const seoTitle = `${puzzle.title} - ${puzzle.difficulty} ${puzzle.theme} ${type === 'wordsearch' ? 'Word Search' : 'Crossword'} Puzzle`;
+    const seoDescription = `Solve this ${puzzle.difficulty.toLowerCase()} ${puzzle.theme.toLowerCase()} ${type === 'wordsearch' ? 'word search' : 'crossword'} puzzle. ${type === 'wordsearch' ? `Find all ${puzzle.words?.length || 15} hidden words` : 'Complete the crossword using the provided clues'}. Perfect for puzzle enthusiasts!`;
+    const keywords = [
+      type === 'wordsearch' ? 'word search' : 'crossword',
+      'puzzle',
+      puzzle.theme.toLowerCase(),
+      puzzle.difficulty.toLowerCase(),
+      'brain game',
+      'word game',
+      'online puzzle',
+      'free puzzle'
+    ];
+
+    // Check if the current URL matches the SEO-friendly format
+    const expectedSlug = `${generateSlug(puzzle.title)}-${puzzle.id}`;
+    if (id !== puzzle.id && id !== expectedSlug) {
+      // Redirect to SEO-friendly URL
+      return {
+        redirect: {
+          destination: `/puzzle/${type}/${expectedSlug}`,
+          permanent: true,
+        },
+      };
+    }
+
+    const puzzleData: PuzzleData = {
+      id: puzzle.id,
+      type: type as 'wordsearch' | 'crossword',
+      title: puzzle.title,
+      theme: puzzle.theme,
+      difficulty: puzzle.difficulty as 'Easy' | 'Medium' | 'Hard',
+      gridSize: puzzle.gridSize,
+      words: puzzle.words,
+      grid: puzzle.grid,
+      solution: puzzle.solution,
+      clues: puzzle.clues,
+      createdAt: puzzle.createdAt.toISOString(),
+      updatedAt: puzzle.updatedAt.toISOString(),
+      estimatedTime: getEstimatedTime(puzzle.difficulty, type),
+      description: seoDescription,
+      seoTitle,
+      seoDescription,
+      keywords,
+    };
+
+    return {
+      props: {
+        puzzle: puzzleData,
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching puzzle:', error);
+    return {
+      props: {
+        puzzle: null,
+        error: 'Failed to load puzzle. Please try again later.',
+      },
+    };
+  }
+};

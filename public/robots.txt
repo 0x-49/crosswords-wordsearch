@@ -1,29 +1,15 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://wordcraft.com/sitemap.xml
+# Sitemaps
+Sitemap: https://crossword-wordsearch.com/sitemap.xml
 
-# Disallow private/admin areas
+# Disallow admin and API routes
 Disallow: /api/
-Disallow: /dashboard/
 Disallow: /admin/
 Disallow: /_next/
-Disallow: /auth/
+Disallow: /auth/callback
 
-# Allow important pages
-Allow: /
-Allow: /about
-Allow: /features
-Allow: /pricing
-Allow: /contact
-Allow: /templates
-Allow: /book-library
-Allow: /help
-Allow: /blog
-Allow: /community
-Allow: /privacy
-Allow: /terms
-
-# Crawl delay (optional)
-Crawl-delay: 1
+# Allow puzzle and book pages
+Allow: /puzzle/
+Allow: /book/

@@ -44,19 +44,19 @@ const Header = () => {
       description: "Discover our powerful puzzle generation tools"
     },
     {
-      title: "Pricing",
-      href: "/pricing",
-      description: "Choose the perfect plan for your needs"
+      title: "Puzzle Library",
+      href: "/puzzle-library",
+      description: "Explore 77,555+ crossword and word search puzzles"
+    },
+    {
+      title: "Book Library",
+      href: "/book-library",
+      description: "Browse our collection of puzzle books"
     },
     {
       title: "Templates",
       href: "/templates",
       description: "Browse our collection of puzzle templates"
-    },
-    {
-      title: "Examples",
-      href: "/book-library",
-      description: "See sample puzzle books and demos"
     }
   ];
 
