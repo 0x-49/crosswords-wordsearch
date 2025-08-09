@@ -19,7 +19,7 @@ model User {
 
 model WordSearch {
   id          String   @id @default(cuid())
-  title       String
+  title       String?
   theme       String
   difficulty  String   // Easy, Medium, Hard
   gridSize    Int      @default(15)
@@ -70,7 +70,7 @@ model WordBank {
 
 model Crossword {
   id          String   @id @default(cuid())
-  title       String
+  title       String?
   theme       String
   difficulty  String
   gridSize    Int      @default(15)

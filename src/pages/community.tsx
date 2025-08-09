@@ -17,7 +17,6 @@ import {
   ArrowRight,
   ExternalLink,
   Github,
-  Discord,
   Twitter,
   Facebook,
   Youtube,
@@ -145,7 +144,7 @@ const socialChannels = [
     name: 'Discord Server',
     description: 'Real-time chat, voice channels, and instant help',
     members: '8,500+',
-    icon: Discord,
+    icon: MessageSquare,
     link: 'https://discord.gg/wordcraft',
     color: 'text-indigo-600'
   },

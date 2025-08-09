@@ -1,0 +1,28 @@
+{
+  "totalAnalyzed": 70,
+  "wordSearchErrors": {
+    "fileNotFound": 0,
+    "jsonParseError": 0,
+    "missingWords": 0,
+    "emptyWords": 0,
+    "invalidData": 0,
+    "databaseError": 0,
+    "unknown": 0
+  },
+  "crosswordErrors": {
+    "fileNotFound": 0,
+    "jsonParseError": 0,
+    "missingClues": 0,
+    "invalidGrid": 0,
+    "databaseError": 0,
+    "unknown": 0
+  },
+  "recommendations": [
+    "Re-run ingestion for files that succeeded on retry",
+    "Fix or skip files with JSON parse errors",
+    "Handle missing/invalid data with better defaults",
+    "Investigate database timeout/connection issues",
+    "Check file system permissions for unreadable files"
+  ],
+  "timestamp": "2025-08-08T14:23:30.329Z"
+}
