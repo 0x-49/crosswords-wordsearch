@@ -103,17 +103,23 @@ export default function Dashboard() {
   }, []);
 
   const fetchWordSearches = async () => {
+    console.log('Fetching word searches...');
     try {
       const response = await fetch('/api/word-search/list');
+      console.log('API Response Status:', response.status);
       if (response.ok) {
         const data = await response.json();
+        console.log('Fetched word searches data:', data);
         setWordSearches(data);
       } else {
+        console.error('Failed to fetch word searches. Status:', response.status);
+        const errorText = await response.text();
+        console.error('Error response body:', errorText);
         toast.error('Failed to fetch word searches');
       }
     } catch (error) {
       console.error('Error fetching word searches:', error);
-      toast.error('Failed to fetch word searches');
+      toast.error('An error occurred while fetching word searches.');
     } finally {
       setLoading(false);
     }
@@ -163,18 +169,24 @@ export default function Dashboard() {
   };
 
   const viewWordSearch = async (id: string) => {
+    console.log(`Fetching details for word search: ${id}`);
     try {
-      const response = await fetch(`/api/word-search/${id}`);
+      const response = await fetch(`/api/word-search/view/${id}`);
+      console.log('View API Response Status:', response.status);
       if (response.ok) {
         const data = await response.json();
+        console.log('Fetched word search details:', data);
         setSelectedWordSearch(data);
         setViewDialogOpen(true);
       } else {
-        toast.error('Failed to load word search');
+        console.error('Failed to fetch word search details. Status:', response.status);
+        const errorText = await response.text();
+        console.error('Error response body:', errorText);
+        toast.error('Failed to fetch word search details');
       }
     } catch (error) {
-      console.error('Error loading word search:', error);
-      toast.error('Failed to load word search');
+      console.error('Error fetching word search details:', error);
+      toast.error('An error occurred while fetching word search details.');
     }
   };
 

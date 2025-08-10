@@ -47,7 +47,7 @@ import {
   Lightbulb
 } from 'lucide-react';
 
-import { getBenefitTagsForTheme, BENEFIT_TAGS, getBenefitTags, getAllBenefitTags, filterPuzzlesByBenefits, calculateCognitiveScore, getPersonalizedBenefitRecommendations, BenefitTag } from '@/lib/benefitTags';
+import { getBenefitTags, getAllBenefitTags, filterPuzzlesByBenefits, calculateCognitiveScore, getPersonalizedBenefitRecommendations, BenefitTag, BENEFIT_TAGS } from '@/lib/benefitTags';
 import CognitiveTracker from '@/components/CognitiveTracker';
 
 interface PuzzleItem {
@@ -95,7 +95,7 @@ export default function PuzzleLibrary() {
   const [puzzles, setPuzzles] = useState<PuzzleItem[]>([]);
   const [filteredPuzzles, setFilteredPuzzles] = useState<PuzzleItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedPuzzle, setSelectedPuzzle] = useState<any>(null);
+  const [selectedPuzzle, setSelectedPuzzle] = useState<PuzzleItem | null>(null);
   const [puzzleViewOpen, setPuzzleViewOpen] = useState(false);
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
   const [showCognitiveTracker, setShowCognitiveTracker] = useState(false);
@@ -383,6 +383,12 @@ export default function PuzzleLibrary() {
       sortBy: 'newest',
       sortOrder: 'desc'
     });
+    setSearchSuggestions(null);
+  };
+
+  const handlePuzzleClick = (puzzle: PuzzleItem) => {
+    setSelectedPuzzle(puzzle);
+    setPuzzleViewOpen(true);
   };
 
   const getDifficultyColor = (difficulty: string) => {
@@ -645,12 +651,13 @@ export default function PuzzleLibrary() {
             variants={staggerContainer}
             initial="initial"
             animate="animate"
+            data-testid="puzzle-grid"
           >
             {filteredPuzzles.map((puzzle, index) => {
               const TypeIcon = getTypeIcon(puzzle.type);
               return (
                 <motion.div key={puzzle.id} variants={fadeInUp}>
-                  <Card className="h-full hover:shadow-lg transition-shadow duration-200 group">
+                  <Card className="h-full hover:shadow-lg transition-shadow duration-200 cursor-pointer group" onClick={() => handlePuzzleClick(puzzle)} data-testid="puzzle-card">
                     <CardHeader className="pb-3">
                       <div className="flex items-start justify-between">
                         <div className="flex items-center gap-2">
@@ -767,23 +774,22 @@ export default function PuzzleLibrary() {
             
             {selectedPuzzle && (
               <div className="overflow-auto max-h-[80vh]">
-                {selectedPuzzle.type === 'wordsearch' ? (
-                  <WordSearchDisplay
-                    wordSearch={selectedPuzzle}
-                    title={selectedPuzzle.title}
-                    theme={selectedPuzzle.theme}
-                    difficulty={selectedPuzzle.difficulty}
-                    showSolution={false}
-                  />
-                ) : (
-                  <CrosswordDisplay
-                    crossword={selectedPuzzle}
-                    title={selectedPuzzle.title}
-                    theme={selectedPuzzle.theme}
-                    difficulty={selectedPuzzle.difficulty}
-                    showSolution={false}
-                  />
-                )}
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-2">{selectedPuzzle.title}</h3>
+                  <div className="flex gap-4 mb-4">
+                    <Badge variant="outline">{selectedPuzzle.type}</Badge>
+                    <Badge variant="outline">{selectedPuzzle.difficulty}</Badge>
+                    <Badge variant="outline">{selectedPuzzle.theme}</Badge>
+                  </div>
+                  <p className="text-gray-600 mb-4">
+                    This {selectedPuzzle.type} puzzle focuses on {selectedPuzzle.theme} with {selectedPuzzle.difficulty} difficulty.
+                  </p>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <p className="text-sm text-gray-500">
+                      Puzzle content would be displayed here. Click the puzzle title to view the full interactive version.
+                    </p>
+                  </div>
+                </div>
               </div>
             )}
           </DialogContent>

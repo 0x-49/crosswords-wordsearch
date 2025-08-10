@@ -36,14 +36,13 @@ async function populateGraphDatabase() {
     // Step 1: Create theme nodes from all puzzles
     console.log('🎨 Creating theme nodes...');
     const themes = await prisma.$queryRaw`
-      SELECT DISTINCT theme, COUNT(*) as puzzle_count
+      SELECT DISTINCT theme 
       FROM (
-        SELECT theme FROM "WordSearch" WHERE theme IS NOT NULL
-        UNION ALL
-        SELECT theme FROM "Crossword" WHERE theme IS NOT NULL
-      ) combined
-      GROUP BY theme
-      ORDER BY puzzle_count DESC;
+        SELECT theme FROM "WordSearch" 
+        UNION 
+        SELECT theme FROM "Crossword"
+      ) AS all_themes
+      ORDER BY theme
     ` as any[];
     
     const themeNodes: GraphNode[] = [];
@@ -58,7 +57,7 @@ async function populateGraphDatabase() {
         entityType: 'theme',
         label: theme.theme,
         properties: {
-          puzzleCount: parseInt(theme.puzzle_count),
+          puzzleCount: 0,
           keywords: extractKeywords(theme.theme)
         }
       });
@@ -92,15 +91,16 @@ async function populateGraphDatabase() {
     
     // Step 2: Create puzzle nodes (sample for performance)
     console.log('🧩 Creating puzzle nodes (sample)...');
-    const samplePuzzles = await prisma.$queryRaw`
-      (SELECT id, title, theme, difficulty, 'word_search' as type FROM "WordSearch" LIMIT 1000)
-      UNION ALL
-      (SELECT id, title, theme, difficulty, 'crossword' as type FROM "Crossword" LIMIT 1000)
-      ORDER BY RANDOM();
+    const wordSearchPuzzles = await prisma.$queryRaw`
+      SELECT id, title, theme, difficulty, words
+      FROM "WordSearch"
+      LIMIT 1000
     ` as any[];
     
     const puzzleNodes: GraphNode[] = [];
-    for (const puzzle of samplePuzzles) {
+    
+    // Process word search puzzles
+    for (const puzzle of wordSearchPuzzles) {
       if (!puzzle.id) continue;
       
       puzzleNodes.push({

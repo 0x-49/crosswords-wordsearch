@@ -1,0 +1,2158 @@
+[96mscripts/analyzePuzzleTitles.ts[0m:[93m27[0m:[93m25[0m - [91merror[0m[90m TS18047: [0m'puzzle.title' is possibly 'null'.
+
+[7m27[0m       const slugTitle = puzzle.title.toLowerCase()
+[7m  [0m [91m                        ~~~~~~~~~~~~[0m
+
+[96mscripts/analyzePuzzleTitles.ts[0m:[93m50[0m:[93m25[0m - [91merror[0m[90m TS18047: [0m'puzzle.title' is possibly 'null'.
+
+[7m50[0m       const slugTitle = puzzle.title.toLowerCase()
+[7m  [0m [91m                        ~~~~~~~~~~~~[0m
+
+[96mscripts/generateAllBookTypes.ts[0m:[93m1[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"../src/utils/bookGenerator"' has no exported member 'generateAllBooks'.
+
+[7m1[0m import { generateAllBooks } from '../src/utils/bookGenerator';
+[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m
+
+[96mscripts/generateAndIngestBooks.ts[0m:[93m5[0m:[93m17[0m - [91merror[0m[90m TS2307: [0mCannot find module 'csv-parser' or its corresponding type declarations.
+
+[7m5[0m import csv from 'csv-parser';
+[7m [0m [91m                ~~~~~~~~~~~~[0m
+
+[96mscripts/generateSitemap.ts[0m:[93m122[0m:[93m36[0m - [91merror[0m[90m TS2345: [0mArgument of type 'string | null' is not assignable to parameter of type 'string'.
+  Type 'null' is not assignable to type 'string'.
+
+[7m122[0m       const slug = `${generateSlug(puzzle.title)}-${puzzle.id}`;
+[7m   [0m [91m                                   ~~~~~~~~~~~~[0m
+
+[96mscripts/generateSitemap.ts[0m:[93m134[0m:[93m36[0m - [91merror[0m[90m TS2345: [0mArgument of type 'string | null' is not assignable to parameter of type 'string'.
+  Type 'null' is not assignable to type 'string'.
+
+[7m134[0m       const slug = `${generateSlug(puzzle.title)}-${puzzle.id}`;
+[7m   [0m [91m                                   ~~~~~~~~~~~~[0m
+
+[96mscripts/runHealthCheck.ts[0m:[93m27[0m:[93m13[0m - [91merror[0m[90m TS7022: [0m'process' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.
+
+[7m27[0m       const process = spawn(command, args, {
+[7m  [0m [91m            ~~~~~~~[0m
+
+[96mscripts/runHealthCheck.ts[0m:[93m30[0m:[93m14[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'process' used before its declaration.
+
+[7m30[0m         cwd: process.cwd()
+[7m  [0m [91m             ~~~~~~~[0m
+
+  [96mscripts/runHealthCheck.ts[0m:[93m27[0m:[93m13[0m
+    [7m27[0m       const process = spawn(command, args, {
+    [7m  [0m [96m            ~~~~~~~[0m
+    'process' is declared here.
+
+[96mscripts/runHealthCheck.ts[0m:[93m36[0m:[93m35[0m - [91merror[0m[90m TS7006: [0mParameter 'data' implicitly has an 'any' type.
+
+[7m36[0m       process.stdout?.on('data', (data) => {
+[7m  [0m [91m                                  ~~~~[0m
+
+[96mscripts/runHealthCheck.ts[0m:[93m40[0m:[93m35[0m - [91merror[0m[90m TS7006: [0mParameter 'data' implicitly has an 'any' type.
+
+[7m40[0m       process.stderr?.on('data', (data) => {
+[7m  [0m [91m                                  ~~~~[0m
+
+[96mscripts/runHealthCheck.ts[0m:[93m44[0m:[93m28[0m - [91merror[0m[90m TS7006: [0mParameter 'code' implicitly has an 'any' type.
+
+[7m44[0m       process.on('close', (code) => {
+[7m  [0m [91m                           ~~~~[0m
+
+[96msrc/components/CognitiveTracker.tsx[0m:[93m141[0m:[93m30[0m - [91merror[0m[90m TS2322: [0mType '{ className: string; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'className' does not exist on type 'IntrinsicAttributes'.
+
+[7m141[0m               <IconComponent className="w-6 h-6 text-purple-500" />
+[7m   [0m [91m                             ~~~~~~~~~[0m
+
+[96msrc/lib/benefitTags.ts[0m:[93m132[0m:[93m25[0m - [91merror[0m[90m TS2802: [0mType 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+
+[7m132[0m   const uniqueIds = [...new Set(benefitIds)];
+[7m   [0m [91m                        ~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/lib/favoritesManager.ts[0m:[93m30[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'userFavorite' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+
+[7m30[0m       const existing = await prisma.userFavorite.findUnique({
+[7m  [0m [91m                                    ~~~~~~~~~~~~[0m
+
+[96msrc/lib/favoritesManager.ts[0m:[93m50[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'userFavorite' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+
+[7m50[0m       const favorite = await prisma.userFavorite.create({
+[7m  [0m [91m                                    ~~~~~~~~~~~~[0m
+
+[96msrc/lib/favoritesManager.ts[0m:[93m79[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'userFavorite' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+
+[7m79[0m       const deleted = await prisma.userFavorite.deleteMany({
+[7m  [0m [91m                                   ~~~~~~~~~~~~[0m
+
+[96msrc/lib/favoritesManager.ts[0m:[93m98[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'userFavorite' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+
+[7m98[0m       const favorite = await prisma.userFavorite.findUnique({
+[7m  [0m [91m                                    ~~~~~~~~~~~~[0m
+
+[96msrc/lib/favoritesManager.ts[0m:[93m130[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'userFavorite' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+
+[7m130[0m       const favorites = await prisma.userFavorite.findMany({
+[7m   [0m [91m                                     ~~~~~~~~~~~~[0m
+
+[96msrc/lib/favoritesManager.ts[0m:[93m179[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'userFavorite' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+
+[7m179[0m       const favorites = await prisma.userFavorite.findMany({
+[7m   [0m [91m                                     ~~~~~~~~~~~~[0m
+
+[96msrc/lib/favoritesManager.ts[0m:[93m184[0m:[93m36[0m - [91merror[0m[90m TS7006: [0mParameter 'f' implicitly has an 'any' type.
+
+[7m184[0m       return new Set(favorites.map(f => f.puzzleId));
+[7m   [0m [91m                                   ~[0m
+
+[96msrc/lib/favoritesManager.ts[0m:[93m201[0m:[93m16[0m - [91merror[0m[90m TS2339: [0mProperty 'userFavorite' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+
+[7m201[0m         prisma.userFavorite.count({ where: { userId } }),
+[7m   [0m [91m               ~~~~~~~~~~~~[0m
+
+[96msrc/lib/favoritesManager.ts[0m:[93m202[0m:[93m16[0m - [91merror[0m[90m TS2339: [0mProperty 'userFavorite' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+
+[7m202[0m         prisma.userFavorite.count({ where: { userId, puzzleType: 'wordsearch' } }),
+[7m   [0m [91m               ~~~~~~~~~~~~[0m
+
+[96msrc/lib/favoritesManager.ts[0m:[93m203[0m:[93m16[0m - [91merror[0m[90m TS2339: [0mProperty 'userFavorite' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+
+[7m203[0m         prisma.userFavorite.count({ where: { userId, puzzleType: 'crossword' } })
+[7m   [0m [91m               ~~~~~~~~~~~~[0m
+
+[96msrc/lib/favoritesManager.ts[0m:[93m224[0m:[93m20[0m - [91merror[0m[90m TS2339: [0mProperty 'userPuzzleInteraction' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+
+[7m224[0m       await prisma.userPuzzleInteraction.create({
+[7m   [0m [91m                   ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/lib/favoritesManager.ts[0m:[93m255[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'userPuzzleInteraction' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+
+[7m255[0m       return await prisma.userPuzzleInteraction.findMany({
+[7m   [0m [91m                          ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/lib/vectorDatabase.ts[0m:[93m139[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'puzzleEmbeddings' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+
+[7m139[0m         const result = await prisma.puzzleEmbeddings.upsert({
+[7m   [0m [91m                                    ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/lib/vectorDatabase.ts[0m:[93m191[0m:[93m46[0m - [91merror[0m[90m TS2339: [0mProperty 'puzzleEmbeddings' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+
+[7m191[0m       const existingEmbedding = await prisma.puzzleEmbeddings.findUnique({
+[7m   [0m [91m                                             ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/lib/vectorDatabase.ts[0m:[93m316[0m:[93m44[0m - [91merror[0m[90m TS2339: [0mProperty 'puzzleEmbedding' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+
+[7m316[0m       const themeEmbeddings = await prisma.puzzleEmbedding.findMany({
+[7m   [0m [91m                                           ~~~~~~~~~~~~~~~[0m
+
+[96msrc/lib/vectorDatabase.ts[0m:[93m324[0m:[93m53[0m - [91merror[0m[90m TS7006: [0mParameter 'embedding' implicitly has an 'any' type.
+
+[7m324[0m       const themeSimilarities = themeEmbeddings.map(embedding => ({
+[7m   [0m [91m                                                    ~~~~~~~~~[0m
+
+[96msrc/lib/vectorDatabase.ts[0m:[93m330[0m:[93m16[0m - [91merror[0m[90m TS7006: [0mParameter 'a' implicitly has an 'any' type.
+
+[7m330[0m         .sort((a, b) => b.similarity - a.similarity)
+[7m   [0m [91m               ~[0m
+
+[96msrc/lib/vectorDatabase.ts[0m:[93m330[0m:[93m19[0m - [91merror[0m[90m TS7006: [0mParameter 'b' implicitly has an 'any' type.
+
+[7m330[0m         .sort((a, b) => b.similarity - a.similarity)
+[7m   [0m [91m                  ~[0m
+
+[96msrc/lib/vectorDatabase.ts[0m:[93m332[0m:[93m14[0m - [91merror[0m[90m TS7006: [0mParameter 'item' implicitly has an 'any' type.
+
+[7m332[0m         .map(item => item.theme)
+[7m   [0m [91m             ~~~~[0m
+
+[96msrc/lib/vectorDatabase.ts[0m:[93m333[0m:[93m18[0m - [91merror[0m[90m TS7006: [0mParameter 'theme' implicitly has an 'any' type.
+
+[7m333[0m         .filter((theme, index, arr) => arr.indexOf(theme) === index); // Remove duplicates
+[7m   [0m [91m                 ~~~~~[0m
+
+[96msrc/lib/vectorDatabase.ts[0m:[93m333[0m:[93m25[0m - [91merror[0m[90m TS7006: [0mParameter 'index' implicitly has an 'any' type.
+
+[7m333[0m         .filter((theme, index, arr) => arr.indexOf(theme) === index); // Remove duplicates
+[7m   [0m [91m                        ~~~~~[0m
+
+[96msrc/lib/vectorDatabase.ts[0m:[93m333[0m:[93m32[0m - [91merror[0m[90m TS7006: [0mParameter 'arr' implicitly has an 'any' type.
+
+[7m333[0m         .filter((theme, index, arr) => arr.indexOf(theme) === index); // Remove duplicates
+[7m   [0m [91m                               ~~~[0m
+
+[96msrc/pages/api/books/generate-all.ts[0m:[93m23[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'totalBooks' does not exist on type 'Promise<BookCollection>'.
+
+[7m23[0m       totalBooks: collection.totalBooks,
+[7m  [0m [91m                             ~~~~~~~~~~[0m
+
+  [96msrc/pages/api/books/generate-all.ts[0m:[93m23[0m:[93m30[0m
+    [7m23[0m       totalBooks: collection.totalBooks,
+    [7m  [0m [96m                             ~~~~~~~~~~[0m
+    Did you forget to use 'await'?
+
+[96msrc/pages/api/books/generate-all.ts[0m:[93m24[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'totalPages' does not exist on type 'Promise<BookCollection>'.
+
+[7m24[0m       totalPages: collection.totalPages,
+[7m  [0m [91m                             ~~~~~~~~~~[0m
+
+  [96msrc/pages/api/books/generate-all.ts[0m:[93m24[0m:[93m30[0m
+    [7m24[0m       totalPages: collection.totalPages,
+    [7m  [0m [96m                             ~~~~~~~~~~[0m
+    Did you forget to use 'await'?
+
+[96msrc/pages/api/books/generate-all.ts[0m:[93m25[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'books' does not exist on type 'Promise<BookCollection>'.
+
+[7m25[0m       themes: collection.books.map(book => ({
+[7m  [0m [91m                         ~~~~~[0m
+
+  [96msrc/pages/api/books/generate-all.ts[0m:[93m25[0m:[93m26[0m
+    [7m25[0m       themes: collection.books.map(book => ({
+    [7m  [0m [96m                         ~~~~~[0m
+    Did you forget to use 'await'?
+
+[96msrc/pages/api/books/generate-all.ts[0m:[93m25[0m:[93m36[0m - [91merror[0m[90m TS7006: [0mParameter 'book' implicitly has an 'any' type.
+
+[7m25[0m       themes: collection.books.map(book => ({
+[7m  [0m [91m                                   ~~~~[0m
+
+[96msrc/pages/api/books/generate-all.ts[0m:[93m29[0m:[93m41[0m - [91merror[0m[90m TS7006: [0mParameter 'p' implicitly has an 'any' type.
+
+[7m29[0m         wordSearches: book.pages.filter(p => p.type === 'wordsearch').length,
+[7m  [0m [91m                                        ~[0m
+
+[96msrc/pages/api/books/generate-all.ts[0m:[93m30[0m:[93m39[0m - [91merror[0m[90m TS7006: [0mParameter 'p' implicitly has an 'any' type.
+
+[7m30[0m         crosswords: book.pages.filter(p => p.type === 'crossword').length
+[7m  [0m [91m                                      ~[0m
+
+[96msrc/pages/api/books/themes.ts[0m:[93m21[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'getBookSummary' does not exist on type 'BookGenerator'.
+
+[7m21[0m     const bookSummary = generator.getBookSummary();
+[7m  [0m [91m                                  ~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/api/favorites/index.ts[0m:[93m3[0m:[93m34[0m - [91merror[0m[90m TS2307: [0mCannot find module 'next-auth/next' or its corresponding type declarations.
+
+[7m3[0m import { getServerSession } from 'next-auth/next';
+[7m [0m [91m                                 ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/api/favorites/index.ts[0m:[93m64[0m:[93m55[0m - [91merror[0m[90m TS18046: [0m'error' is of type 'unknown'.
+
+[7m64[0m       error: process.env.NODE_ENV === 'development' ? error.message : undefined
+[7m  [0m [91m                                                      ~~~~~[0m
+
+[96msrc/pages/api/recommendations/index.ts[0m:[93m34[0m:[93m55[0m - [91merror[0m[90m TS18046: [0m'error' is of type 'unknown'.
+
+[7m34[0m       error: process.env.NODE_ENV === 'development' ? error.message : undefined
+[7m  [0m [91m                                                      ~~~~~[0m
+
+[96msrc/pages/api/search/enhanced.ts[0m:[93m50[0m:[93m55[0m - [91merror[0m[90m TS18046: [0m'error' is of type 'unknown'.
+
+[7m50[0m       error: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error'
+[7m  [0m [91m                                                      ~~~~~[0m
+
+[96msrc/pages/api/search/smart.ts[0m:[93m78[0m:[93m81[0m - [91merror[0m[90m TS18046: [0m'vectorError' is of type 'unknown'.
+
+[7m78[0m         console.log('ÔÜá´©Å Vector search error, falling back to enhanced search:', vectorError.message);
+[7m  [0m [91m                                                                                ~~~~~~~~~~~[0m
+
+[96msrc/pages/api/search/smart.ts[0m:[93m102[0m:[93m7[0m - [91merror[0m[90m TS2740: [0mType '{ themes: string[]; relatedSearches: string[]; popularPuzzles: any[]; }' is missing the following properties from type 'any[]': length, pop, push, concat, and 35 more.
+
+[7m102[0m       suggestions,
+[7m   [0m [91m      ~~~~~~~~~~~[0m
+
+[96msrc/pages/api/search/smart.ts[0m:[93m107[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'queryTerms' does not exist on type '{ themes: string[]; relatedSearches: string[]; popularPuzzles: any[]; }'.
+
+[7m107[0m         queryTerms: suggestions.queryTerms,
+[7m   [0m [91m                                ~~~~~~~~~~[0m
+
+[96msrc/pages/api/search/smart.ts[0m:[93m114[0m:[93m7[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'message' does not exist in type 'SearchResponse | { error: string; }'.
+
+[7m114[0m       message: 'Search failed',
+[7m   [0m [91m      ~~~~~~~[0m
+
+[96msrc/pages/api/search/vector.ts[0m:[93m180[0m:[93m7[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'details' does not exist in type 'VectorSearchResponse | { error: string; }'.
+
+[7m180[0m       details: process.env.NODE_ENV === 'development' ? error.message : undefined
+[7m   [0m [91m      ~~~~~~~[0m
+
+[96msrc/pages/api/search/vector.ts[0m:[93m180[0m:[93m57[0m - [91merror[0m[90m TS18046: [0m'error' is of type 'unknown'.
+
+[7m180[0m       details: process.env.NODE_ENV === 'development' ? error.message : undefined
+[7m   [0m [91m                                                        ~~~~~[0m
+
+[96msrc/pages/benefits.tsx[0m:[93m4[0m:[93m130[0m - [91merror[0m[90m TS2307: [0mCannot find module '@chakra-ui/react' or its corresponding type declarations.
+
+[7m4[0m import { Box, Container, Heading, Text, VStack, HStack, Icon, SimpleGrid, Card, CardBody, Badge, List, ListItem, ListIcon } from '@chakra-ui/react';
+[7m [0m [91m                                                                                                                                 ~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/blog/crossword-benefits-memory-improvement.tsx[0m:[93m5[0m:[93m147[0m - [91merror[0m[90m TS2307: [0mCannot find module '@chakra-ui/react' or its corresponding type declarations.
+
+[7m5[0m import { Box, Container, Heading, Text, VStack, HStack, Icon, SimpleGrid, Card, CardBody, Badge, List, ListItem, ListIcon, Divider, Button } from '@chakra-ui/react';
+[7m [0m [91m                                                                                                                                                  ~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/blog/word-search-benefits-brain-health.tsx[0m:[93m5[0m:[93m139[0m - [91merror[0m[90m TS2307: [0mCannot find module '@chakra-ui/react' or its corresponding type declarations.
+
+[7m5[0m import { Box, Container, Heading, Text, VStack, HStack, Icon, SimpleGrid, Card, CardBody, Badge, List, ListItem, ListIcon, Divider } from '@chakra-ui/react';
+[7m [0m [91m                                                                                                                                          ~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/blog/word-search-benefits-brain-health.tsx[0m:[93m298[0m:[93m16[0m - [91merror[0m[90m TS2304: [0mCannot find name 'Button'.
+
+[7m298[0m               <Button colorScheme="blue" size="lg" rightIcon={<ArrowRight />}>
+[7m   [0m [91m               ~~~~~~[0m
+
+[96msrc/pages/blog/word-search-benefits-brain-health.tsx[0m:[93m300[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'Button'.
+
+[7m300[0m               </Button>
+[7m   [0m [91m                ~~~~~~[0m
+
+[96msrc/pages/book/[type]/[id].tsx[0m:[93m443[0m:[93m22[0m - [91merror[0m[90m TS2339: [0mProperty 'subtitle' does not exist on type '{ wordSearches: { wordSearch: { id: string; title: string | null; theme: string; difficulty: string; }; }[]; crosswords: { crossword: { id: string; title: string | null; theme: string; difficulty: string; }; }[]; } & { ...; }'.
+
+[7m443[0m       subtitle: book.subtitle || undefined,
+[7m   [0m [91m                     ~~~~~~~~[0m
+
+[96msrc/pages/book/[type]/[id].tsx[0m:[93m444[0m:[93m7[0m - [91merror[0m[90m TS2322: [0mType 'string | null' is not assignable to type 'string'.
+  Type 'null' is not assignable to type 'string'.
+
+[7m444[0m       description: book.description,
+[7m   [0m [91m      ~~~~~~~~~~~[0m
+
+  [96msrc/pages/book/[type]/[id].tsx[0m:[93m33[0m:[93m3[0m
+    [7m33[0m   description: string;
+    [7m  [0m [96m  ~~~~~~~~~~~[0m
+    The expected type comes from property 'description' which is declared here on type 'BookData'
+
+[96msrc/pages/book/[type]/[id].tsx[0m:[93m460[0m:[93m7[0m - [91merror[0m[90m TS2322: [0mType '({ type: "wordsearch"; id: string; title: string | null; theme: string; difficulty: string; } | { type: "crossword"; id: string; title: string | null; theme: string; difficulty: string; })[]' is not assignable to type '{ id: string; title: string; theme: string; difficulty: string; type: "crossword" | "wordsearch"; }[]'.
+  Type '{ type: "wordsearch"; id: string; title: string | null; theme: string; difficulty: string; } | { type: "crossword"; id: string; title: string | null; theme: string; difficulty: string; }' is not assignable to type '{ id: string; title: string; theme: string; difficulty: string; type: "crossword" | "wordsearch"; }'.
+    Type '{ type: "wordsearch"; id: string; title: string | null; theme: string; difficulty: string; }' is not assignable to type '{ id: string; title: string; theme: string; difficulty: string; type: "crossword" | "wordsearch"; }'.
+      Types of property 'title' are incompatible.
+        Type 'string | null' is not assignable to type 'string'.
+          Type 'null' is not assignable to type 'string'.
+
+[7m460[0m       puzzles
+[7m   [0m [91m      ~~~~~~~[0m
+
+  [96msrc/pages/book/[type]/[id].tsx[0m:[93m43[0m:[93m3[0m
+    [7m43[0m   puzzles: Array<{
+    [7m  [0m [96m  ~~~~~~~[0m
+    The expected type comes from property 'puzzles' which is declared here on type 'BookData'
+
+[96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m201[0m:[93m3[0m - [91merror[0m[90m TS2741: [0mProperty 'puzzleNames' is missing in type '{ words: string[]; crosswordData: { word: string; clue: string; }[]; }' but required in type 'ThemeData'.
+
+[7m201[0m   "Golden Age TV": {
+[7m   [0m [91m  ~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m6[0m:[93m3[0m
+    [7m6[0m   puzzleNames: {
+    [7m [0m [96m  ~~~~~~~~~~~[0m
+    'puzzleNames' is declared here.
+
+[96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m227[0m:[93m3[0m - [91merror[0m[90m TS2741: [0mProperty 'puzzleNames' is missing in type '{ words: string[]; crosswordData: { word: string; clue: string; }[]; }' but required in type 'ThemeData'.
+
+[7m227[0m   "Gardening Wisdom": {
+[7m   [0m [91m  ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m6[0m:[93m3[0m
+    [7m6[0m   puzzleNames: {
+    [7m [0m [96m  ~~~~~~~~~~~[0m
+    'puzzleNames' is declared here.
+
+[96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m253[0m:[93m3[0m - [91merror[0m[90m TS2741: [0mProperty 'puzzleNames' is missing in type '{ words: string[]; crosswordData: { word: string; clue: string; }[]; }' but required in type 'ThemeData'.
+
+[7m253[0m   "Traditional Cooking": {
+[7m   [0m [91m  ~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m6[0m:[93m3[0m
+    [7m6[0m   puzzleNames: {
+    [7m [0m [96m  ~~~~~~~~~~~[0m
+    'puzzleNames' is declared here.
+
+[96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m279[0m:[93m3[0m - [91merror[0m[90m TS2741: [0mProperty 'puzzleNames' is missing in type '{ words: string[]; crosswordData: { word: string; clue: string; }[]; }' but required in type 'ThemeData'.
+
+[7m279[0m   "Family Memories": {
+[7m   [0m [91m  ~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m6[0m:[93m3[0m
+    [7m6[0m   puzzleNames: {
+    [7m [0m [96m  ~~~~~~~~~~~[0m
+    'puzzleNames' is declared here.
+
+[96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m305[0m:[93m3[0m - [91merror[0m[90m TS2741: [0mProperty 'puzzleNames' is missing in type '{ words: string[]; crosswordData: { word: string; clue: string; }[]; }' but required in type 'ThemeData'.
+
+[7m305[0m   "Health & Wellness": {
+[7m   [0m [91m  ~~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m6[0m:[93m3[0m
+    [7m6[0m   puzzleNames: {
+    [7m [0m [96m  ~~~~~~~~~~~[0m
+    'puzzleNames' is declared here.
+
+[96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m331[0m:[93m3[0m - [91merror[0m[90m TS2741: [0mProperty 'puzzleNames' is missing in type '{ words: string[]; crosswordData: { word: string; clue: string; }[]; }' but required in type 'ThemeData'.
+
+[7m331[0m   "Hobbies & Crafts": {
+[7m   [0m [91m  ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m6[0m:[93m3[0m
+    [7m6[0m   puzzleNames: {
+    [7m [0m [96m  ~~~~~~~~~~~[0m
+    'puzzleNames' is declared here.
+
+[96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m358[0m:[93m3[0m - [91merror[0m[90m TS2741: [0mProperty 'puzzleNames' is missing in type '{ words: string[]; crosswordData: { word: string; clue: string; }[]; }' but required in type 'ThemeData'.
+
+[7m358[0m   "Fairy Tales": {
+[7m   [0m [91m  ~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m6[0m:[93m3[0m
+    [7m6[0m   puzzleNames: {
+    [7m [0m [96m  ~~~~~~~~~~~[0m
+    'puzzleNames' is declared here.
+
+[96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m384[0m:[93m3[0m - [91merror[0m[90m TS2741: [0mProperty 'puzzleNames' is missing in type '{ words: string[]; crosswordData: { word: string; clue: string; }[]; }' but required in type 'ThemeData'.
+
+[7m384[0m   "Zoo Animals": {
+[7m   [0m [91m  ~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m6[0m:[93m3[0m
+    [7m6[0m   puzzleNames: {
+    [7m [0m [96m  ~~~~~~~~~~~[0m
+    'puzzleNames' is declared here.
+
+[96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m410[0m:[93m3[0m - [91merror[0m[90m TS2741: [0mProperty 'puzzleNames' is missing in type '{ words: string[]; crosswordData: { word: string; clue: string; }[]; }' but required in type 'ThemeData'.
+
+[7m410[0m   "School Days": {
+[7m   [0m [91m  ~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m6[0m:[93m3[0m
+    [7m6[0m   puzzleNames: {
+    [7m [0m [96m  ~~~~~~~~~~~[0m
+    'puzzleNames' is declared here.
+
+[96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m437[0m:[93m3[0m - [91merror[0m[90m TS2741: [0mProperty 'puzzleNames' is missing in type '{ words: string[]; crosswordData: { word: string; clue: string; }[]; }' but required in type 'ThemeData'.
+
+[7m437[0m   "Beach Vacation": {
+[7m   [0m [91m  ~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m6[0m:[93m3[0m
+    [7m6[0m   puzzleNames: {
+    [7m [0m [96m  ~~~~~~~~~~~[0m
+    'puzzleNames' is declared here.
+
+[96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m463[0m:[93m3[0m - [91merror[0m[90m TS2741: [0mProperty 'puzzleNames' is missing in type '{ words: string[]; crosswordData: { word: string; clue: string; }[]; }' but required in type 'ThemeData'.
+
+[7m463[0m   "Mountain Retreat": {
+[7m   [0m [91m  ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m6[0m:[93m3[0m
+    [7m6[0m   puzzleNames: {
+    [7m [0m [96m  ~~~~~~~~~~~[0m
+    'puzzleNames' is declared here.
+
+[96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m489[0m:[93m3[0m - [91merror[0m[90m TS2741: [0mProperty 'puzzleNames' is missing in type '{ words: string[]; crosswordData: { word: string; clue: string; }[]; }' but required in type 'ThemeData'.
+
+[7m489[0m   "Spa & Wellness": {
+[7m   [0m [91m  ~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m6[0m:[93m3[0m
+    [7m6[0m   puzzleNames: {
+    [7m [0m [96m  ~~~~~~~~~~~[0m
+    'puzzleNames' is declared here.
+
+[96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m527[0m:[93m3[0m - [91merror[0m[90m TS2741: [0mProperty 'puzzleNames' is missing in type '{ words: string[]; crosswordData: { word: string; clue: string; }[]; }' but required in type 'ThemeData'.
+
+[7m527[0m   "Vintage Cars": {
+[7m   [0m [91m  ~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m6[0m:[93m3[0m
+    [7m6[0m   puzzleNames: {
+    [7m [0m [96m  ~~~~~~~~~~~[0m
+    'puzzleNames' is declared here.
+
+[96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m553[0m:[93m3[0m - [91merror[0m[90m TS2741: [0mProperty 'puzzleNames' is missing in type '{ words: string[]; crosswordData: { word: string; clue: string; }[]; }' but required in type 'ThemeData'.
+
+[7m553[0m   "Classic Literature": {
+[7m   [0m [91m  ~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/elderlyFriendlyThemes.ts[0m:[93m6[0m:[93m3[0m
+    [7m6[0m   puzzleNames: {
+    [7m [0m [96m  ~~~~~~~~~~~[0m
+    'puzzleNames' is declared here.
+
+[96mtests/e2e/site-health.test.ts[0m:[93m128[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'timing' does not exist on type 'Response'.
+
+[7m128[0m         const timing = response.timing();
+[7m   [0m [91m                                ~~~~~~[0m
+
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es5.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2015.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2016.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2017.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2018.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2019.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2020.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2021.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2022.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2023.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2024.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.esnext.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.dom.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.dom.iterable.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2015.core.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2015.collection.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2015.generator.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2015.iterable.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2015.promise.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2015.proxy.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2015.reflect.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2015.symbol.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2016.array.include.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2016.intl.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2017.arraybuffer.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2017.date.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2017.object.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2017.string.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2017.intl.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2018.intl.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2018.promise.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2018.regexp.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2019.array.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2019.object.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2019.string.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2019.symbol.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2019.intl.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2020.bigint.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2020.date.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2020.promise.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2020.sharedmemory.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2020.string.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2020.intl.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2020.number.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2021.promise.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2021.string.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2021.weakref.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2021.intl.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2022.array.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2022.error.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2022.intl.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2022.object.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2022.string.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2022.regexp.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2023.array.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2023.collection.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2023.intl.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2024.arraybuffer.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2024.collection.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2024.object.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2024.promise.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2024.regexp.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2024.sharedmemory.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.es2024.string.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.esnext.array.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.esnext.collection.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.esnext.intl.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.esnext.disposable.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.esnext.promise.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.esnext.decorators.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.esnext.iterator.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.esnext.float16.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.esnext.error.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.esnext.sharedmemory.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.decorators.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/typescript/lib/lib.decorators.legacy.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/styled-jsx/types/css.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/react/global.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/csstype/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/prop-types/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/react/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/styled-jsx/types/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/styled-jsx/types/macro.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/styled-jsx/types/style.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/styled-jsx/types/global.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/amp.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/amp.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/compatibility/disposable.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/compatibility/indexable.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/compatibility/iterators.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/compatibility/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/globals.typedarray.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/buffer.buffer.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/header.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/readable.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/file.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/fetch.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/formdata.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/connector.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/client.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/errors.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/dispatcher.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/global-dispatcher.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/global-origin.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/pool-stats.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/pool.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/handlers.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/balanced-pool.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/agent.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/mock-interceptor.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/mock-agent.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/mock-client.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/mock-pool.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/mock-errors.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/proxy-agent.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/env-http-proxy-agent.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/retry-handler.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/retry-agent.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/api.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/interceptors.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/util.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/cookies.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/patch.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/websocket.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/eventsource.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/filereader.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/diagnostics-channel.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/content-type.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/cache.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/undici-types/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/globals.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/assert.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/assert/strict.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/async_hooks.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/buffer.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/child_process.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/cluster.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/console.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/constants.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/crypto.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/dgram.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/diagnostics_channel.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/dns.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/dns/promises.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/domain.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/dom-events.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/events.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/fs.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/fs/promises.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/http.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/http2.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/https.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/inspector.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/module.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/net.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/os.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/path.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/perf_hooks.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/process.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/punycode.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/querystring.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/readline.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/readline/promises.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/repl.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/sea.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/stream.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/stream/promises.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/stream/consumers.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/stream/web.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/string_decoder.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/test.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/timers.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/timers/promises.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/tls.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/trace_events.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/tty.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/url.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/util.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/v8.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/vm.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/wasi.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/worker_threads.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/zlib.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/node/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/get-page-files.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/react/canary.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/react/experimental.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/react-dom/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/react-dom/canary.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/react-dom/experimental.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/compiled/webpack/webpack.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/config.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/lib/load-custom-routes.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/image-config.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/webpack/plugins/subresource-integrity-plugin.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/body-streams.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-kind.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-definitions/route-definition.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-matches/route-match.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/app-router-headers.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/request-meta.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/lib/revalidate.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/config-shared.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/base-http/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/api-utils/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/node-environment.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/require-hook.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/node-polyfill-crypto.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/lib/page-types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/analysis/get-page-static-info.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/webpack/loaders/get-module-build-info.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/webpack/plugins/middleware-plugin.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/render-result.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/helpers/i18n-provider.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/web/next-url.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/compiled/@edge-runtime/cookies/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/web/spec-extension/cookies.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/web/spec-extension/request.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/web/spec-extension/fetch-event.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/web/spec-extension/response.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/web/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/lib/setup-exception-listeners.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/lib/constants.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/webpack/plugins/pages-manifest-plugin.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/router/utils/route-regex.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/router/utils/route-matcher.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/router/utils/parse-url.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/base-http/node.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/font-utils.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/webpack/plugins/flight-manifest-plugin.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-modules/route-module.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/deep-readonly.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/load-components.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/router/utils/middleware-route-matcher.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/webpack/plugins/next-font-manifest-plugin.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-definitions/locale-route-definition.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-definitions/pages-route-definition.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/mitt.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/with-router.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/router.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/route-loader.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/page-loader.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/bloom-filter.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/router/router.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/router-context.shared-runtime.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/loadable-context.shared-runtime.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/loadable.shared-runtime.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/image-config-context.shared-runtime.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-definitions/app-page-route-definition.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/modern-browserslist-target.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/constants.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/webpack/loaders/metadata/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/page-extensions-type.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/webpack/loaders/next-app-loader.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/lib/app-dir-module.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/response-cache/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/response-cache/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/lib/incremental-cache/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/hooks-server-context.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/app-render/dynamic-rendering.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/static-generation-async-storage-instance.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/static-generation-async-storage.external.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/web/spec-extension/adapters/request-cookies.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/async-storage/draft-mode-provider.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/web/spec-extension/adapters/headers.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/request-async-storage-instance.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/request-async-storage.external.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/app-render/create-error-handler.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/app-render/app-render.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/amp-context.shared-runtime.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-modules/app-page/vendored/contexts/entrypoints.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-modules/app-page/module.compiled.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/react/jsx-runtime.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/error-boundary.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/router-reducer/create-initial-router-state.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/app-router.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/layout-router.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/render-from-template-context.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/action-async-storage-instance.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/action-async-storage.external.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/client-page.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/search-params.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/not-found-boundary.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/app-render/rsc/preloads.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/app-render/rsc/postpone.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/app-render/rsc/taint.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/app-render/entry-base.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/templates/app-page.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-modules/app-page/module.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/lib/builtin-request-context.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/app-render/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/router-reducer/fetch-server-response.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/router-reducer/router-reducer-types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-modules/pages/vendored/contexts/entrypoints.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-modules/pages/module.compiled.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/templates/pages.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-modules/pages/module.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/render.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-definitions/pages-api-route-definition.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-matches/pages-api-route-match.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-matchers/route-matcher.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-matcher-providers/route-matcher-provider.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/route-matcher-managers/route-matcher-manager.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/normalizers/normalizer.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/normalizers/locale-route-normalizer.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/normalizers/request/pathname-normalizer.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/normalizers/request/suffix.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/normalizers/request/rsc.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/normalizers/request/prefix.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/normalizers/request/postponed.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/normalizers/request/action.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/normalizers/request/prefetch-rsc.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/future/normalizers/request/next-data.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/base-server.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/image-optimizer.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/next-server.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/lib/coalesced-function.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/lib/router-utils/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/trace/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/trace/trace.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/trace/shared.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/trace/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/load-jsconfig.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/webpack-config.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/webpack/plugins/define-env-plugin.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/build/swc/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/dev/parse-version-info.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/dev/hot-reloader-types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/telemetry/storage.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/lib/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/lib/render-server.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/lib/router-server.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/router/utils/path-match.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/lib/router-utils/filesystem.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/lib/dev-bundler-service.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/dev/static-paths-worker.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/dev/next-dev-server.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/next.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/lib/metadata/types/alternative-urls-types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/lib/metadata/types/extra-types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/lib/metadata/types/metadata-types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/lib/metadata/types/manifest-types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/lib/metadata/types/opengraph-types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/lib/metadata/types/twitter-types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/lib/metadata/types/metadata-interface.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/types/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/html-context.shared-runtime.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@next/env/dist/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/utils.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/pages/_app.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/app.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/web/spec-extension/unstable-cache.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/web/spec-extension/revalidate.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/web/spec-extension/unstable-no-store.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/cache.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/runtime-config.external.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/config.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/pages/_document.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/document.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/dynamic.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dynamic.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/pages/_error.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/error.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/head.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/head.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/draft-mode.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/headers.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/headers.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/get-img-props.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/image-component.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/shared/lib/image-external.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/image.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/link.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/link.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/redirect-status-code.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/redirect.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/not-found.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/navigation.react-server.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/components/navigation.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/navigation.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/router.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/client/script.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/script.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/web/spec-extension/user-agent.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/compiled/@edge-runtime/primitives/url.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/server/web/spec-extension/image-response.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/compiled/@vercel/og/satori/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/compiled/@vercel/og/emoji/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/dist/compiled/@vercel/og/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/server.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/types/global.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/types/compiled.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next/image-types/global.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/next-env.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/playwright-core/types/protocol.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/playwright-core/types/structs.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/playwright-core/types/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/playwright-core/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/playwright/types/test.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/playwright/test.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@playwright/test/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/playwright.config.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@prisma/client/runtime/library.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/.prisma/client/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/.prisma/client/default.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@prisma/client/default.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/dotenv/lib/main.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/analyzeErrorTypes.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/analyzeErrors.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/analyzePuzzleTitles.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/checkBookResults.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/diagnosticFix.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/diagnostics.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/utils/wordSearchGenerator.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/utils/crosswordGenerator.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/utils/puzzleData.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/utils/bookGenerator.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/generateAllBookTypes.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/generateAndIngestBooks.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/generateBooksClean.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/internal/builtin-types.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/internal/types.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/internal/headers.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/internal/shim-types.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/core/streaming.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/internal/request-options.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/internal/utils/log.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/core/error.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/pagination.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/internal/parse.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/core/api-promise.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/core/pagination.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/internal/uploads.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/internal/to-file.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/core/uploads.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/core/resource.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/shared.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/completions.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/chat/completions/messages.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/chat/completions/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/chat/completions.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/error.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/lib/EventStream.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/lib/AbstractChatCompletionRunner.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/lib/ChatCompletionStream.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/lib/ResponsesParser.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/lib/responses/EventTypes.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/lib/responses/ResponseStream.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/responses/input-items.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/responses/responses.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/lib/parser.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/lib/ChatCompletionStreamingRunner.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/lib/jsonschema.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/lib/RunnableFunction.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/lib/ChatCompletionRunner.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/chat/completions/completions.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/chat/chat.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/chat/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/audio/speech.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/audio/transcriptions.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/audio/translations.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/audio/audio.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/batches.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/beta/threads/messages.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/beta/threads/runs/steps.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/lib/AssistantStream.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/beta/threads/runs/runs.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/beta/threads/threads.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/beta/assistants.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/beta/realtime/sessions.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/beta/realtime/transcription-sessions.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/beta/realtime/realtime.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/beta/beta.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/containers/files/content.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/containers/files/files.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/containers/containers.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/embeddings.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/graders/grader-models.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/evals/runs/output-items.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/evals/runs/runs.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/evals/evals.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/files.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/fine-tuning/methods.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/fine-tuning/alpha/graders.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/fine-tuning/alpha/alpha.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/fine-tuning/checkpoints/permissions.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/fine-tuning/checkpoints/checkpoints.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/fine-tuning/jobs/checkpoints.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/fine-tuning/jobs/jobs.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/fine-tuning/fine-tuning.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/graders/graders.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/images.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/models.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/moderations.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/uploads/parts.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/uploads/uploads.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/uploads.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/vector-stores/files.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/vector-stores/file-batches.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/vector-stores/vector-stores.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/webhooks.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/resources/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/client.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/azure.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/openai/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/generateEmbeddings.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/generateSitemap.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/getUserId.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/identifyFailedFiles.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/ingestPuzzles.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/populateGraphDB.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/retryFailedFiles.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/runHealthCheck.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/setupGraphDB.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/setupVectorDB.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/simpleCheck.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/scripts/testSmallBatch.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/AccessibilityIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ActivityLogIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/AlignBaselineIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/AlignBottomIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/AlignCenterHorizontallyIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/AlignCenterVerticallyIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/AlignLeftIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/AlignRightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/AlignTopIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/AllSidesIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/AngleIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ArchiveIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ArrowBottomLeftIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ArrowBottomRightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ArrowDownIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ArrowLeftIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ArrowRightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ArrowTopLeftIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ArrowTopRightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ArrowUpIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/AspectRatioIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/AvatarIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BackpackIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BadgeIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BarChartIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BellIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BlendingModeIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BookmarkIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BookmarkFilledIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BorderAllIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BorderBottomIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BorderDashedIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BorderDottedIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BorderLeftIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BorderNoneIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BorderRightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BorderSolidIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BorderSplitIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BorderStyleIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BorderTopIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BorderWidthIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BoxIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/BoxModelIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ButtonIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CalendarIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CameraIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CardStackIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CardStackMinusIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CardStackPlusIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CaretDownIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CaretLeftIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CaretRightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CaretSortIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CaretUpIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ChatBubbleIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CheckIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CheckCircledIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CheckboxIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ChevronDownIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ChevronLeftIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ChevronRightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ChevronUpIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CircleIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CircleBackslashIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ClipboardIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ClipboardCopyIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ClockIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CodeIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CodeSandboxLogoIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ColorWheelIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ColumnSpacingIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ColumnsIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CommitIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/Component1Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/Component2Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ComponentBooleanIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ComponentInstanceIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ComponentNoneIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ComponentPlaceholderIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ContainerIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CookieIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CopyIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CornerBottomLeftIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CornerBottomRightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CornerTopLeftIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CornerTopRightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CornersIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CountdownTimerIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CounterClockwiseClockIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CropIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/Cross1Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/Cross2Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CrossCircledIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/Crosshair1Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/Crosshair2Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CrumpledPaperIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CubeIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CursorArrowIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/CursorTextIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DashIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DashboardIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DesktopIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DimensionsIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DiscIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DiscordLogoIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DividerHorizontalIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DividerVerticalIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DotIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DotFilledIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DotsHorizontalIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DotsVerticalIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DoubleArrowDownIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DoubleArrowLeftIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DoubleArrowRightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DoubleArrowUpIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DownloadIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DragHandleDots1Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DragHandleDots2Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DragHandleHorizontalIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DragHandleVerticalIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DrawingPinIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DrawingPinFilledIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/DropdownMenuIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/EnterIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/EnterFullScreenIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/EnvelopeClosedIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/EnvelopeOpenIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/EraserIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ExclamationTriangleIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ExitIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ExitFullScreenIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ExternalLinkIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/EyeClosedIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/EyeNoneIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/EyeOpenIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/FaceIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/FigmaLogoIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/FileIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/FileMinusIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/FilePlusIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/FileTextIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/FontBoldIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/FontFamilyIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/FontItalicIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/FontRomanIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/FontSizeIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/FontStyleIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/FrameIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/FramerLogoIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/GearIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/GitHubLogoIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/GlobeIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/GridIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/GroupIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/Half1Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/Half2Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/HamburgerMenuIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/HandIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/HeadingIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/HeartIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/HeartFilledIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/HeightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/HobbyKnifeIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/HomeIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/IconJarLogoIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/IdCardIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ImageIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/InfoCircledIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/InputIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/InstagramLogoIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/KeyboardIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LapTimerIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LaptopIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LayersIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LayoutIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LetterCaseCapitalizeIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LetterCaseLowercaseIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LetterCaseToggleIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LetterCaseUppercaseIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LetterSpacingIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LightningBoltIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LineHeightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/Link1Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/Link2Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LinkBreak1Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LinkBreak2Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LinkNone1Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LinkNone2Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LinkedInLogoIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ListBulletIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LockClosedIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LockOpen1Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LockOpen2Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/LoopIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/MagicWandIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/MagnifyingGlassIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/MarginIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/MaskOffIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/MaskOnIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/MinusIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/MinusCircledIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/MixIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/MixerHorizontalIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/MixerVerticalIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/MobileIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ModulzLogoIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/MoonIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/MoveIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/NotionLogoIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/OpacityIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/OpenInNewWindowIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/OverlineIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/PaddingIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/PaperPlaneIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/PauseIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/Pencil1Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/Pencil2Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/PersonIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/PieChartIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/PilcrowIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/PinBottomIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/PinLeftIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/PinRightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/PinTopIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/PlayIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/PlusIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/PlusCircledIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/QuestionMarkIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/QuestionMarkCircledIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/QuoteIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/RadiobuttonIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ReaderIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ReloadIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ResetIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ResumeIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/RocketIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/RotateCounterClockwiseIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/RowSpacingIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/RowsIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/RulerHorizontalIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/RulerSquareIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ScissorsIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SectionIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SewingPinIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SewingPinFilledIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ShadowIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ShadowInnerIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ShadowNoneIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ShadowOuterIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/Share1Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/Share2Icon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ShuffleIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SizeIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SketchLogoIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SlashIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SliderIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SpaceBetweenHorizontallyIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SpaceBetweenVerticallyIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SpaceEvenlyHorizontallyIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SpaceEvenlyVerticallyIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SpeakerLoudIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SpeakerModerateIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SpeakerOffIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SpeakerQuietIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SquareIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/StackIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/StarIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/StarFilledIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/StitchesLogoIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/StopIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/StopwatchIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/StretchHorizontallyIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/StretchVerticallyIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/StrikethroughIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SunIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SwitchIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/SymbolIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TableIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TargetIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TextIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TextAlignBottomIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TextAlignCenterIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TextAlignJustifyIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TextAlignLeftIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TextAlignMiddleIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TextAlignRightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TextAlignTopIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TextNoneIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ThickArrowDownIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ThickArrowLeftIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ThickArrowRightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ThickArrowUpIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TimerIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TokensIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TrackNextIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TrackPreviousIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TransformIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TransparencyGridIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TrashIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TriangleDownIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TriangleLeftIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TriangleRightIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TriangleUpIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/TwitterLogoIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/UnderlineIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/UpdateIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/UploadIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ValueIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ValueNoneIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/VercelLogoIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/VideoIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ViewGridIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ViewHorizontalIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ViewNoneIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ViewVerticalIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/WidthIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ZoomInIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/ZoomOutIcon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-icons/dist/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-context/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-primitive/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-dismissable-layer/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-toast/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/clsx/clsx.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/class-variance-authority/dist/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/class-variance-authority/dist/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/tailwind-merge/dist/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/lib/utils.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/toast.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/use-toast.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/lib/benefitTags.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/lib/favoritesManager.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/lib/performanceMonitor.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/lib/prisma.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/lib/puzzleSearch.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/lib/simpleFavorites.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/lib/vectorDatabase.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api/hello.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api/seed-word-bank.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/functions-js/dist/module/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/functions-js/dist/module/FunctionsClient.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/functions-js/dist/module/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestError.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/postgrest-js/dist/cjs/select-query-parser/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/postgrest-js/dist/cjs/select-query-parser/parser.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/postgrest-js/dist/cjs/select-query-parser/utils.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/postgrest-js/dist/cjs/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestBuilder.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/postgrest-js/dist/cjs/select-query-parser/result.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestTransformBuilder.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestFilterBuilder.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestQueryBuilder.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestClient.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/postgrest-js/dist/cjs/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/realtime-js/dist/module/lib/constants.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/realtime-js/dist/module/lib/serializer.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/realtime-js/dist/module/lib/timer.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/realtime-js/dist/module/lib/push.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/phoenix/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/realtime-js/dist/module/RealtimePresence.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/realtime-js/dist/module/RealtimeChannel.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/realtime-js/dist/module/RealtimeClient.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/realtime-js/dist/module/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/storage-js/dist/module/lib/errors.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/storage-js/dist/module/lib/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/storage-js/dist/module/lib/fetch.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/storage-js/dist/module/packages/StorageFileApi.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/storage-js/dist/module/packages/StorageBucketApi.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/storage-js/dist/module/StorageClient.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/storage-js/dist/module/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/auth-js/dist/module/lib/error-codes.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/auth-js/dist/module/lib/errors.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/auth-js/dist/module/lib/solana.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/auth-js/dist/module/lib/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/auth-js/dist/module/lib/fetch.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/auth-js/dist/module/GoTrueAdminApi.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/auth-js/dist/module/lib/helpers.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/auth-js/dist/module/GoTrueClient.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/auth-js/dist/module/AuthAdminApi.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/auth-js/dist/module/AuthClient.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/auth-js/dist/module/lib/locks.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/auth-js/dist/module/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/supabase-js/dist/module/lib/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/supabase-js/dist/module/lib/SupabaseAuthClient.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/supabase-js/dist/module/SupabaseClient.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/supabase-js/dist/module/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/cookie/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/ssr/dist/main/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/ssr/dist/main/createBrowserClient.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/ssr/dist/main/createServerClient.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/ssr/dist/main/utils/helpers.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/ssr/dist/main/utils/constants.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/ssr/dist/main/utils/chunker.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/ssr/dist/main/utils/base64url.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/ssr/dist/main/utils/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@supabase/ssr/dist/main/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/util/supabase/api.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api/books/generate-all.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api/books/generate-book.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/utils/expandedThemes.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api/books/themes.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api/crossword/list.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api/favorites/index.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api/recommendations/index.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api/search/enhanced.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api/search/graph.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api/search/smart.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api/search/vector.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api/word-search/[id].ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api/word-search/create.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api/word-search/list.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/util/string.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/util/supabase/component.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/util/supabase/server-props.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/util/supabase/static-props.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/utils/bookCategories.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/utils/elderlyFriendlyThemes.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/utils/enhancedThemeMetadata.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/utils/puzzleNameGenerator.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/tests/e2e/site-health.test.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/lucide-react/dist/lucide-react.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/contexts/AccessibilityContext.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-slot/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/button.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-arrow/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/rect/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-popper/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-portal/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-tooltip/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/tooltip.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/AccessibilityButton.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-switch/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/switch.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-focus-scope/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-select/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/select.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/card.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-separator/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/separator.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-label/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/label.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/AccessibilityPanel.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/badge.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-progress/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/progress.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/motion-dom/dist/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/motion-utils/dist/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/framer-motion/dist/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/CognitiveTracker.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/CrosswordDisplay.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/CrosswordPreview.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/input.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/Logo.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/Footer.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/contexts/AuthContext.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-icons/lib/iconsManifest.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-icons/lib/iconBase.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-icons/lib/iconContext.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-icons/lib/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-icons/fc/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/hooks/useIsIFrame.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/GoogleButton.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-dialog/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/sheet.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-visually-hidden/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-navigation-menu/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/navigation-menu.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/Header.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/dialog.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/sonner/dist/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/InteractiveCrossword.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/InteractiveWordSearch.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/Layout.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ProtectedRoute.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/WordSearchDisplay.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-collapsible/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-accordion/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/accordion.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-alert-dialog/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/alert-dialog.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/alert.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-aspect-ratio/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/aspect-ratio.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-avatar/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/avatar.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/breadcrumb.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/constants.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/locale/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/fp/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/add.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/addBusinessDays.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/addDays.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/addHours.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/addISOWeekYears.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/addMilliseconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/addMinutes.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/addMonths.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/addQuarters.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/addSeconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/addWeeks.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/addYears.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/areIntervalsOverlapping.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/clamp.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/closestIndexTo.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/closestTo.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/compareAsc.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/compareDesc.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/constructFrom.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/constructNow.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/daysToWeeks.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInBusinessDays.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInCalendarDays.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInCalendarISOWeekYears.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInCalendarISOWeeks.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInCalendarMonths.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInCalendarQuarters.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInCalendarWeeks.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInCalendarYears.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInDays.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInHours.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInISOWeekYears.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInMilliseconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInMinutes.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInMonths.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInQuarters.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInSeconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInWeeks.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/differenceInYears.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/eachDayOfInterval.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/eachHourOfInterval.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/eachMinuteOfInterval.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/eachMonthOfInterval.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/eachQuarterOfInterval.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/eachWeekOfInterval.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/eachWeekendOfInterval.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/eachWeekendOfMonth.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/eachWeekendOfYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/eachYearOfInterval.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/endOfDay.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/endOfDecade.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/endOfHour.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/endOfISOWeek.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/endOfISOWeekYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/endOfMinute.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/endOfMonth.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/endOfQuarter.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/endOfSecond.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/endOfToday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/endOfTomorrow.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/endOfWeek.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/endOfYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/endOfYesterday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/_lib/format/formatters.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/_lib/format/longFormatters.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/format.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/formatDistance.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/formatDistanceStrict.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/formatDistanceToNow.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/formatDistanceToNowStrict.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/formatDuration.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/formatISO.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/formatISO9075.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/formatISODuration.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/formatRFC3339.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/formatRFC7231.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/formatRelative.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/fromUnixTime.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getDate.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getDay.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getDayOfYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getDaysInMonth.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getDaysInYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getDecade.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/_lib/defaultOptions.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getDefaultOptions.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getHours.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getISODay.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getISOWeek.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getISOWeekYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getISOWeeksInYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getMilliseconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getMinutes.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getMonth.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getOverlappingDaysInIntervals.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getQuarter.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getSeconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getTime.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getUnixTime.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getWeek.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getWeekOfMonth.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getWeekYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getWeeksInMonth.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/getYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/hoursToMilliseconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/hoursToMinutes.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/hoursToSeconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/interval.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/intervalToDuration.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/intlFormat.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/intlFormatDistance.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isAfter.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isBefore.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isDate.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isEqual.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isExists.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isFirstDayOfMonth.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isFriday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isFuture.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isLastDayOfMonth.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isLeapYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isMatch.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isMonday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isPast.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isSameDay.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isSameHour.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isSameISOWeek.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isSameISOWeekYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isSameMinute.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isSameMonth.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isSameQuarter.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isSameSecond.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isSameWeek.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isSameYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isSaturday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isSunday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isThisHour.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isThisISOWeek.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isThisMinute.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isThisMonth.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isThisQuarter.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isThisSecond.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isThisWeek.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isThisYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isThursday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isToday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isTomorrow.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isTuesday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isValid.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isWednesday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isWeekend.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isWithinInterval.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/isYesterday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/lastDayOfDecade.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/lastDayOfISOWeek.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/lastDayOfISOWeekYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/lastDayOfMonth.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/lastDayOfQuarter.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/lastDayOfWeek.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/lastDayOfYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/_lib/format/lightFormatters.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/lightFormat.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/max.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/milliseconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/millisecondsToHours.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/millisecondsToMinutes.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/millisecondsToSeconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/min.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/minutesToHours.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/minutesToMilliseconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/minutesToSeconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/monthsToQuarters.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/monthsToYears.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/nextDay.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/nextFriday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/nextMonday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/nextSaturday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/nextSunday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/nextThursday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/nextTuesday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/nextWednesday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/parse/_lib/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/parse/_lib/Setter.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/parse/_lib/Parser.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/parse/_lib/parsers.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/parse.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/parseISO.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/parseJSON.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/previousDay.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/previousFriday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/previousMonday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/previousSaturday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/previousSunday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/previousThursday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/previousTuesday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/previousWednesday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/quartersToMonths.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/quartersToYears.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/roundToNearestHours.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/roundToNearestMinutes.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/secondsToHours.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/secondsToMilliseconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/secondsToMinutes.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/set.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setDate.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setDay.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setDayOfYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setDefaultOptions.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setHours.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setISODay.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setISOWeek.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setISOWeekYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setMilliseconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setMinutes.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setMonth.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setQuarter.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setSeconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setWeek.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setWeekYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/setYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/startOfDay.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/startOfDecade.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/startOfHour.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/startOfISOWeek.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/startOfISOWeekYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/startOfMinute.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/startOfMonth.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/startOfQuarter.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/startOfSecond.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/startOfToday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/startOfTomorrow.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/startOfWeek.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/startOfWeekYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/startOfYear.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/startOfYesterday.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/sub.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/subBusinessDays.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/subDays.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/subHours.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/subISOWeekYears.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/subMilliseconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/subMinutes.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/subMonths.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/subQuarters.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/subSeconds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/subWeeks.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/subYears.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/toDate.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/transpose.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/weeksToDays.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/yearsToDays.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/yearsToMonths.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/yearsToQuarters.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/date-fns/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-day-picker/dist/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/calendar.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/Alignment.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/NodeRects.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/Axis.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/SlidesToScroll.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/Limit.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/ScrollContain.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/DragTracker.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/utils.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/Animations.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/Counter.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/EventHandler.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/EventStore.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/PercentOfView.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/ResizeHandler.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/Vector1d.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/ScrollBody.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/ScrollBounds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/ScrollLooper.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/ScrollProgress.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/SlideRegistry.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/ScrollTarget.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/ScrollTo.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/SlideFocus.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/Translate.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/SlideLooper.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/SlidesHandler.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/SlidesInView.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/Engine.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/OptionsHandler.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/Plugins.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/EmblaCarousel.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/DragHandler.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/components/Options.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel/esm/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel-react/esm/components/useEmblaCarousel.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/embla-carousel-react/esm/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/carousel.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/container/Surface.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/container/Layer.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/d3-time/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/d3-scale/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/victory-vendor/d3-scale.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/cartesian/XAxis.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/cartesian/YAxis.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/util/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/component/DefaultLegendContent.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/util/payload/getUniqPayload.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/component/Legend.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/component/DefaultTooltipContent.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/component/Tooltip.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/component/ResponsiveContainer.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/component/Cell.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/component/Text.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/component/Label.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/component/LabelList.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/component/Customized.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/shape/Sector.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/d3-path/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/d3-shape/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/victory-vendor/d3-shape.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/shape/Curve.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/shape/Rectangle.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/shape/Polygon.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/shape/Dot.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/shape/Cross.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/shape/Symbols.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/polar/PolarGrid.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/polar/PolarRadiusAxis.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/polar/PolarAngleAxis.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/polar/Pie.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/polar/Radar.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/polar/RadialBar.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/cartesian/Brush.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/util/IfOverflowMatches.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/cartesian/ReferenceLine.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/cartesian/ReferenceDot.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/cartesian/ReferenceArea.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/cartesian/CartesianAxis.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/cartesian/CartesianGrid.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/cartesian/Line.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/cartesian/Area.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/util/BarUtils.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/cartesian/Bar.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/cartesian/ZAxis.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/cartesian/ErrorBar.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/cartesian/Scatter.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/lodash/common/common.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/lodash/common/array.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/lodash/common/collection.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/lodash/common/date.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/lodash/common/function.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/lodash/common/lang.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/lodash/common/math.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/lodash/common/number.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/lodash/common/object.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/lodash/common/seq.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/lodash/common/string.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/lodash/common/util.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/lodash/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/util/getLegendProps.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/util/ChartUtils.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/chart/AccessibilityManager.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/chart/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/chart/generateCategoricalChart.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/chart/LineChart.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/chart/BarChart.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/chart/PieChart.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/chart/Treemap.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/chart/Sankey.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/chart/RadarChart.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/chart/ScatterChart.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/chart/AreaChart.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/chart/RadialBarChart.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/chart/ComposedChart.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/chart/SunburstChart.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/shape/Trapezoid.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/numberAxis/Funnel.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/chart/FunnelChart.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/util/Global.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/recharts/types/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/chart.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-checkbox/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/checkbox.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/collapsible.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/cmdk/dist/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/command.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-roving-focus/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-menu/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-context-menu/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/context-menu.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/vaul/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/drawer.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-dropdown-menu/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/dropdown-menu.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/constants.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/utils/createSubject.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/types/events.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/types/path/common.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/types/path/eager.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/types/path/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/types/fieldArray.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/types/resolvers.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/types/form.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/types/utils.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/types/fields.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/types/errors.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/types/validator.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/types/controller.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/types/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/controller.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/form.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/logic/appendErrors.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/logic/createFormControl.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/logic/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/useController.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/useFieldArray.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/useForm.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/useFormContext.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/useFormState.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/useWatch.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/utils/get.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/utils/set.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/utils/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-hook-form/dist/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/form.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-hover-card/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/hover-card.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/input-otp/dist/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/input-otp.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-menubar/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/menubar.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/pagination.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-popover/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/popover.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-radio-group/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/radio-group.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/Panel.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/PanelGroup.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/PanelResizeHandleRegistry.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/PanelResizeHandle.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/constants.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/utils/assert.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/utils/csp.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/utils/cursor.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/utils/dom/getPanelElement.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/utils/dom/getPanelElementsForGroup.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/utils/dom/getPanelGroupElement.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/utils/dom/getResizeHandleElement.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/utils/dom/getResizeHandleElementIndex.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/utils/dom/getResizeHandleElementsForGroup.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/utils/dom/getResizeHandlePanelIds.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/utils/rects/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/utils/rects/getIntersectingRectangle.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/utils/rects/intersects.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/declarations/src/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-resizable-panels/dist/react-resizable-panels.cjs.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/resizable.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-scroll-area/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/scroll-area.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/skeleton.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-slider/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/slider.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next-themes/dist/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/next-themes/dist/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/sonner.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/table.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-tabs/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/tabs.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/textarea.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/toaster.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-toggle/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@radix-ui/react-toggle-group/dist/index.d.mts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/toggle.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/components/ui/toggle-group.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/404.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/500.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/_app.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/_document.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/about.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/accessibility.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/api-docs.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/benefits.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/book-generator.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/book-library.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/careers.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/community.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/contact.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/cookies.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/crossword-demo.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/dashboard.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/error.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/features.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/feedback.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/formik/dist/types.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/formik/dist/Field.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/formik/dist/Formik.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/formik/dist/Form.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/formik/dist/withFormik.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/hoist-non-react-statics/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/formik/dist/FieldArray.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/formik/dist/utils.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/formik/dist/connect.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/formik/dist/ErrorMessage.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/formik/dist/FormikContext.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/formik/dist/FastField.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/formik/dist/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/primitive.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/typed-array.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/basic.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/observable-like.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/internal.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/except.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/simplify.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/writable.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/mutable.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/merge.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/merge-exclusive.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/require-at-least-one.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/require-exactly-one.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/require-all-or-none.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/remove-index-signature.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/partial-deep.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/partial-on-undefined-deep.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/readonly-deep.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/literal-union.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/promisable.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/opaque.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/invariant-of.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/set-optional.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/set-required.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/set-non-nullable.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/value-of.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/promise-value.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/async-return-type.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/conditional-keys.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/conditional-except.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/conditional-pick.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/union-to-intersection.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/stringified.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/fixed-length-array.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/multidimensional-array.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/multidimensional-readonly-array.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/iterable-element.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/entry.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/entries.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/set-return-type.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/asyncify.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/numeric.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/jsonify.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/schema.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/literal-to-primitive.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/string-key-of.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/exact.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/readonly-tuple.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/optional-keys-of.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/has-optional-keys.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/required-keys-of.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/has-required-keys.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/spread.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/split.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/camel-case.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/camel-cased-properties.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/camel-cased-properties-deep.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/delimiter-case.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/kebab-case.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/delimiter-cased-properties.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/kebab-cased-properties.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/delimiter-cased-properties-deep.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/kebab-cased-properties-deep.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/pascal-case.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/pascal-cased-properties.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/pascal-cased-properties-deep.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/snake-case.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/snake-cased-properties.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/snake-cased-properties-deep.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/includes.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/screaming-snake-case.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/join.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/trim.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/replace.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/get.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/last-array-element.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/package-json.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/source/tsconfig-json.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/type-fest/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/yup/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/forgot-password.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/gdpr.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/glossary.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/index.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/react-icons/fa/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/login.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/magic-link-login.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/play-crossword.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/press.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/pricing.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/privacy-policy.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/privacy.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/private.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/public.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/puzzle-library.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/reset-password.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/signup.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/sitemap.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/status.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/templates.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/terms.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/auth/callback.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/blog/[slug].tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/blog/crossword-benefits-memory-improvement.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/blog/index.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/blog/word-search-benefits-brain-health.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/book/[type]/[id].tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/help/faq.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/help/getting-started.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/help/index.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/help/tutorials.tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/src/pages/puzzle/[type]/[id].tsx
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/d3-array/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/d3-color/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/d3-ease/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/d3-interpolate/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/d3-timer/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/unist/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/hast/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/lodash.throttle/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/parse-json/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/raf/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/react-syntax-highlighter/index.d.ts
+C:/personal/amazon kdp/CrossWord-WordSearch/node_modules/@types/ws/index.d.ts
+
+Found 75 errors in 22 files.
+
+Errors  Files
+     2  scripts/analyzePuzzleTitles.ts[90m:27[0m
+     1  scripts/generateAllBookTypes.ts[90m:1[0m
+     1  scripts/generateAndIngestBooks.ts[90m:5[0m
+     2  scripts/generateSitemap.ts[90m:122[0m
+     5  scripts/runHealthCheck.ts[90m:27[0m
+     1  src/components/CognitiveTracker.tsx[90m:141[0m
+     1  src/lib/benefitTags.ts[90m:132[0m
+    12  src/lib/favoritesManager.ts[90m:30[0m
+    10  src/lib/vectorDatabase.ts[90m:139[0m
+     6  src/pages/api/books/generate-all.ts[90m:23[0m
+     1  src/pages/api/books/themes.ts[90m:21[0m
+     2  src/pages/api/favorites/index.ts[90m:3[0m
+     1  src/pages/api/recommendations/index.ts[90m:34[0m
+     1  src/pages/api/search/enhanced.ts[90m:50[0m
+     4  src/pages/api/search/smart.ts[90m:78[0m
+     2  src/pages/api/search/vector.ts[90m:180[0m
+     1  src/pages/benefits.tsx[90m:4[0m
+     1  src/pages/blog/crossword-benefits-memory-improvement.tsx[90m:5[0m
+     3  src/pages/blog/word-search-benefits-brain-health.tsx[90m:5[0m
+     3  src/pages/book/[type]/[id].tsx[90m:443[0m
+    14  src/utils/elderlyFriendlyThemes.ts[90m:201[0m
+     1  tests/e2e/site-health.test.ts[90m:128[0m

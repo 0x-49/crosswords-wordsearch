@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-08-10T10:13:11.611Z",
+  "summary": {
+    "buildPassed": false,
+    "typeCheckPassed": false,
+    "lintCheckPassed": false,
+    "testsRunSuccessfully": false,
+    "totalErrors": 1,
+    "overallHealth": "ISSUES_DETECTED"
+  },
+  "details": {
+    "buildCheck": false,
+    "typeCheck": false,
+    "lintCheck": false,
+    "testResults": null,
+    "performanceResults": null,
+    "errors": [
+      "Health check execution failed: ReferenceError: Cannot access 'process2' before initialization"
+    ]
+  },
+  "recommendations": [
+    "Fix build errors before deployment",
+    "Resolve TypeScript type errors for better code quality",
+    "Fix linting issues to maintain code standards",
+    "Address E2E test failures to ensure user experience quality"
+  ]
+}

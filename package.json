@@ -6,13 +6,20 @@
     "node": "20.x"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --hostname localhost",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-build": "prisma db push --accept-data-loss && next build"
+    "vercel-build": "prisma db push --accept-data-loss && next build",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "health-check": "npx tsx scripts/runHealthCheck.ts",
+    "type-check": "tsc --noEmit",
+    "performance-test": "playwright test tests/e2e/site-health.test.ts --project=chromium"
   },
   "dependencies": {
+    "@chakra-ui/react": "^3.24.2",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@hookform/resolvers": "^3.9.0",
@@ -50,7 +57,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "1.0.4",
-    "date-fns": "^4.1.0",
+    "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.3.0",
     "formik": "^2.4.6",
     "framer-motion": "^11.3.30",
@@ -79,6 +86,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@playwright/test": "^1.54.2",
     "@types/lodash.throttle": "^4.1.9",
     "@types/node": "^20",
     "@types/react": "^18",
