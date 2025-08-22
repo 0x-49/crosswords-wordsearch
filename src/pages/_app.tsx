@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import '../styles/globals.css';
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
+import { ChakraProvider } from '@chakra-ui/react';
 
 // Simplified AuthContext for immediate functionality
 const AuthContext = React.createContext({
@@ -66,11 +67,13 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#2563eb" />
       </Head>
-      <AuthContext.Provider value={authValue}>
-        <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
-          <Component {...pageProps} />
-        </div>
-      </AuthContext.Provider>
+      <ChakraProvider>
+        <AuthContext.Provider value={authValue}>
+          <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
+            <Component {...pageProps} />
+          </div>
+        </AuthContext.Provider>
+      </ChakraProvider>
     </>
   )
 }

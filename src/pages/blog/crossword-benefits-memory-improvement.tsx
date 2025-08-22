@@ -352,7 +352,7 @@ const CrosswordBenefitsBlogPost: NextPage = () => {
               <Badge colorScheme="green" p={2} fontSize="sm">Memory Tracking</Badge>
             </HStack>
             <Link href="/puzzle-library">
-              <Button colorScheme="purple" size="lg" rightIcon={<ArrowRight />}>
+              <Button colorScheme="purple" size="lg" endIcon={<ArrowRight />}>
                 Start Your Memory Training Today
               </Button>
             </Link>

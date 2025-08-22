@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     const generator = new BookGenerator();
-    const collection = generator.generateAllBooks();
+    const collection = await generator.generateAllBooks();
 
     // Store the collection summary in the response
     const summary = {

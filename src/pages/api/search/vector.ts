@@ -10,7 +10,7 @@ const openai = new OpenAI({
 interface VectorSearchResult {
   puzzle: any;
   similarity: number;
-  type: 'word_search' | 'crossword';
+  type: 'wordsearch' | 'crossword';
   matchReasons: string[];
 }
 
@@ -63,9 +63,11 @@ export default async function handler(
     const queryEmbedding = embeddingResponse.data[0].embedding;
 
     // Build where clause for additional filters
+    // Normalize incoming API type ('wordsearch' | 'crossword' | 'all') to DB values ('word_search' | 'crossword')
     let typeFilter = '';
     if (type !== 'all') {
-      typeFilter = `AND pe."puzzleType" = '${type}'`;
+      const dbType = type === 'wordsearch' ? 'word_search' : type;
+      typeFilter = `AND pe."puzzleType" = '${dbType}'`;
     }
 
     // Perform vector similarity search using raw SQL
@@ -112,14 +114,15 @@ export default async function handler(
         // Determine match reasons
         const matchReasons = getMatchReasons(query, puzzle, vectorResult.similarity);
 
+        const apiType = vectorResult.puzzleType === 'word_search' ? 'wordsearch' : 'crossword';
         results.push({
           puzzle: {
             ...puzzle,
             id: puzzle.id,
-            type: vectorResult.puzzleType
+            type: apiType
           },
           similarity: vectorResult.similarity,
-          type: vectorResult.puzzleType as 'word_search' | 'crossword',
+          type: apiType,
           matchReasons
         });
 
@@ -157,7 +160,11 @@ export default async function handler(
       const fallbackResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/search/smart`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(req.body)
+        body: JSON.stringify({
+          ...req.body,
+          useVector: false,
+          _fromVectorFallback: true
+        })
       });
       
       if (fallbackResponse.ok) {
@@ -176,8 +183,7 @@ export default async function handler(
     }
 
     res.status(500).json({ 
-      error: 'Vector search failed',
-      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+      error: 'Vector search failed'
     });
   }
 }

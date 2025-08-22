@@ -158,6 +158,50 @@ export class BookGenerator {
       totalPages: books.reduce((total, book) => total + book.totalPages, 0)
     };
   }
+
+  /**
+   * Returns a lightweight summary of available books and page counts
+   */
+  public async getBookSummary(): Promise<{
+    totalBooks: number;
+    totalPages: number;
+    books: Array<{
+      id: string;
+      title: string;
+      wordSearches: number;
+      crosswords: number;
+      totalPages: number;
+    }>;
+  }> {
+    const bookMetadata = await getBookMetadata();
+    const books: Array<{
+      id: string;
+      title: string;
+      wordSearches: number;
+      crosswords: number;
+      totalPages: number;
+    }> = [];
+
+    for (const { id, title } of bookMetadata) {
+      const wsPaths = await getPuzzleFilePathsForBook(id, 'wordsearch');
+      const cwPaths = await getPuzzleFilePathsForBook(id, 'crossword');
+      const wordSearches = wsPaths.length;
+      const crosswords = cwPaths.length;
+      books.push({
+        id,
+        title,
+        wordSearches,
+        crosswords,
+        totalPages: wordSearches + crosswords,
+      });
+    }
+
+    return {
+      totalBooks: books.length,
+      totalPages: books.reduce((sum, b) => sum + b.totalPages, 0),
+      books,
+    };
+  }
 }
 
 /**

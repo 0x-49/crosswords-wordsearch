@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import FavoritesManager from '@/lib/favoritesManager';
-import { getServerSession } from 'next-auth/next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
@@ -59,9 +58,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
   } catch (error) {
     console.error('Favorites API error:', error);
+    const errMsg = error instanceof Error ? error.message : 'Internal server error';
     res.status(500).json({ 
       message: 'Internal server error',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      error: process.env.NODE_ENV === 'development' ? errMsg : undefined
     });
   }
 }

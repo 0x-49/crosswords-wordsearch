@@ -1830,4 +1830,65 @@ tests/
 
 ---
 
-This comprehensive blueprint provides a complete understanding of the CrossWord-WordSearch codebase, enabling effective debugging, maintenance, and feature development. Use this document as your primary reference for navigating and understanding the application architecture.s
+## 📒 API Reference (Grounded)
+
+The following API routes reflect the current implementation in `src/pages/api/`. Auth indicates if a Supabase user session is required.
+
+- **GET `/api/word-search/list`**
+  - Auth: Required
+  - Query: `page` (number, default 1), `limit` (number, default 50)
+  - Returns: Array of user's word searches with light fields
+  - File: `src/pages/api/word-search/list.ts`
+
+- **POST `/api/word-search/create`**
+  - Auth: Required
+  - Body: `{ title: string; theme: string; difficulty: 'Easy'|'Medium'|'Hard'; gridSize?: number; wordCount?: number; customWords?: string[] }`
+  - Returns: Created puzzle with grid and solution
+  - File: `src/pages/api/word-search/create.ts`
+
+- **GET `/api/crossword/list`**
+  - Auth: Not required (rate-limited)
+  - Query: `page` (number, default 1), `limit` (number, default 20, max 50), `search?`, `theme?`, `difficulty?`
+  - Notes:
+    - Rate limits: 120/min for authenticated users (based on Supabase session), 30/min for anonymous users (based on IP).
+    - Response headers: `X-RateLimit-Remaining`, `X-RateLimit-Reset`.
+    - Backend: Uses Upstash Redis rate limiting if `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` are set and packages are installed; otherwise falls back to in-memory (single-instance only).
+    - Search term must be 2+ chars.
+  - Returns: `{ crosswords, pagination: { page, limit, total, pages } }`
+  - File: `src/pages/api/crossword/list.ts`
+
+- **GET `/api/books/themes`**
+  - Auth: Required
+  - Returns: Book summary including counts per theme and puzzle type
+  - File: `src/pages/api/books/themes.ts`
+
+- **POST `/api/books/generate-all`**
+  - Auth: Required
+  - Action: Triggers generation for all configured books; async task is awaited
+  - File: `src/pages/api/books/generate-all.ts`
+
+- **POST `/api/search/vector`**
+  - Auth: Not required
+  - Body: `{ query: string; type?: 'wordsearch'|'crossword'; limit?: number; useVector?: boolean; _fromSmartFallback?: boolean }`
+  - Behavior: Maps API `type='wordsearch'|'crossword'` to DB `word_search|crossword`. Falls back to smart search when `useVector=false`.
+  - File: `src/pages/api/search/vector.ts`
+
+- **POST `/api/search/smart`**
+  - Auth: Not required
+  - Body: `{ query: string; type?: 'wordsearch'|'crossword' }`
+  - Behavior: Hybrid scoring; may call vector endpoint with recursion guard
+  - File: `src/pages/api/search/smart.ts`
+
+- **GET|POST|DELETE `/api/favorites`**
+  - Auth: Transitional (currently expects a `user-id` header; to be migrated to Supabase session)
+  - Behavior: Manage favorites per user
+  - File: `src/pages/api/favorites/index.ts`
+
+- **POST `/api/seed-word-bank`**
+  - Auth: Required
+  - Action: Clears and seeds the word bank from predefined themes
+  - File: `src/pages/api/seed-word-bank.ts`
+
+—
+
+This comprehensive blueprint provides a complete understanding of the CrossWord-WordSearch codebase, enabling effective debugging, maintenance, and feature development. Use this document as your primary reference for navigating and understanding the application architecture.

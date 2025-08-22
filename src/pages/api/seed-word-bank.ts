@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '@/lib/prisma';
 import { WORD_THEMES } from '@/utils/wordSearchGenerator';
+import { createClient } from '@/util/supabase/api';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -8,6 +9,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
+    // Require authenticated user
+    const supabase = createClient(req, res);
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    if (authError || !user) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+
     // Clear existing word bank
     await prisma.wordBank.deleteMany();
 

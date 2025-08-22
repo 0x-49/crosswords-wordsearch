@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const generator = new BookGenerator();
     const themes = getThemeNames();
-    const bookSummary = generator.getBookSummary();
+    const bookSummary = await generator.getBookSummary();
 
     res.status(200).json({
       themes,

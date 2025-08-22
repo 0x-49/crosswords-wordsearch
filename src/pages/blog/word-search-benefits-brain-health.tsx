@@ -2,7 +2,7 @@ import React from 'react';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Box, Container, Heading, Text, VStack, HStack, Icon, SimpleGrid, Card, CardBody, Badge, List, ListItem, ListIcon, Divider } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, VStack, HStack, Icon, SimpleGrid, Card, CardBody, Badge, List, ListItem, ListIcon, Divider, Button } from '@chakra-ui/react';
 import { Brain, Heart, BookOpen, Target, TrendingUp, Clock, Users, Award, CheckCircle, ArrowRight } from 'lucide-react';
 
 const WordSearchBenefitsBlogPost: NextPage = () => {
@@ -295,7 +295,7 @@ const WordSearchBenefitsBlogPost: NextPage = () => {
               <Badge colorScheme="purple" p={2} fontSize="sm">Research-Backed</Badge>
             </HStack>
             <Link href="/puzzle-library">
-              <Button colorScheme="blue" size="lg" rightIcon={<ArrowRight />}>
+              <Button colorScheme="blue" size="lg" endIcon={<ArrowRight />}>
                 Start Your Brain Training Journey
               </Button>
             </Link>
